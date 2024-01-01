@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using CourtReservation.Screens;
+using Microsoft.Win32;
 
 namespace CourtReservation
 {
@@ -6,7 +7,7 @@ namespace CourtReservation
     {
         static void Main(string[] args)
         {
-            AppScreen.Weclome();
+            MainScreen.Weclome();
             int userChosie = int.Parse(Console.ReadLine());
             if (userChosie == 1)
             {

@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CourtReservation
+namespace CourtReservation.Screens
 {
-    internal class AppScreen
+    internal class MainScreen
     {
-        public static  void Weclome() {
-            Console.Title = ("Court Reservation");
+        public static void Weclome()
+        {
+            Console.Title = "Court Reservation";
 
             Console.WriteLine("=============================");
             Console.WriteLine("Welcome To Court Reservation");

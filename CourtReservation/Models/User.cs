@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CourtReservation
+namespace CourtReservation.Models
 {
     internal class User
     {
@@ -12,7 +12,7 @@ namespace CourtReservation
         public int Id { get; set; }
         public string UserName { get; set; }
         public int Password { get; set; }
-        public string UserType { get;}
+        public string UserType { get; }
 
 
         //Default Constructor
@@ -25,16 +25,16 @@ namespace CourtReservation
         }
 
         //Parametarized Constructor
-        public User(int id, string userName, int password,string userType)
+        public User(int id, string userName, int password, string userType)
         {
-            this.Id = id;
-            this.UserName = userName;
-            this.Password = password;
-            this.UserType = userType;
+            Id = id;
+            UserName = userName;
+            Password = password;
+            UserType = userType;
 
         }
 
-        public User(string userName, int password) : this(100, userName, password,"") { }
+        public User(string userName, int password) : this(100, userName, password, "") { }
 
 
 
@@ -42,9 +42,9 @@ namespace CourtReservation
         //Method
         public virtual void PrintUserData()
         {
-            Console.WriteLine("Id is" + this.Id);
-            Console.WriteLine("UserName is" + this.UserName);
-            Console.WriteLine("Password is" + this.Password);
+            Console.WriteLine("Id is" + Id);
+            Console.WriteLine("UserName is" + UserName);
+            Console.WriteLine("Password is" + Password);
         }
     }
 }
