@@ -32,7 +32,10 @@ namespace CourtReservation
 
 
             AuthService authService = new AuthService();
-            var admins = authService.LoadUsers(); 
+            AuthService dks = new AuthService();
+            authService.RegisterUser(5,"ali","sdjfoavan","admin");
+            dks.RegisterUser(5250,"rfg","asdsda","fsaas"); 
+
 
 
 
