@@ -15,6 +15,11 @@ namespace CourtReservation.Models
         public string UserType { get; }
 
 
+        public User()
+        {
+            // You can initialize default values if needed
+        }
+
 
         //Parametarized Constructor
         public User(string userName, string password, string userType)

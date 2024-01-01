@@ -37,7 +37,7 @@ namespace CourtReservation.Models
 
         public void RegisterUser(string username, string password)
         {
-            User newuser = new User(username,password);
+            User newuser = new User ( username ,password);
 
         }
     }
