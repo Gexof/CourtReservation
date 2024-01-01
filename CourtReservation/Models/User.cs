@@ -11,20 +11,28 @@ namespace CourtReservation.Models
         //Attribute
         //public int Id { get; set; }
         public string UserName { get; set; }
-        public string Password { get; set; }
+        public int Password { get; set; }
         public string UserType { get; }
 
 
-        //Parametarized Constructor
-        public User(string userName, string password, string userType)
+        //Default Constructor
+        public User()
         {
+
+        }
+
+
+        //Parametarized Constructor
+        public User(string userName, int password, string userType)
+        {
+
             UserName = userName;
             Password = password;
             UserType = userType;
 
         }
 
-        public User(string userName, string password) : this(userName, password, "") { }
+        public User(string userName, int password) : this( userName, password, "") { }
 
 
 
@@ -32,11 +40,10 @@ namespace CourtReservation.Models
         //Method
         public virtual void PrintUserData()
         {
+            //Console.WriteLine("Id is" + Id);
             Console.WriteLine("UserName is" + UserName);
             Console.WriteLine("Password is" + Password);
         }
-
-
     }
 }
 
