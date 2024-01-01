@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class Court
+public abstract class Court
 {
     public int CourtId { get; set; }
 
