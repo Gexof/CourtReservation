@@ -7,13 +7,27 @@ namespace CourtReservation
     {
         static void Main(string[] args)
         {
-            MainScreen.Weclome();
-            int userChosie = int.Parse(Console.ReadLine());
-            if (userChosie == 1)
+            bool exit = false;
+            while (!exit) 
             {
                 Console.Clear();
-                RegisterScreen.Register();
+                MainScreen.Weclome();
+                string userChosie = Console.ReadLine();
+                switch (userChosie)
+                {
+                    case "1":
+                        Console.WriteLine("Login Screen");
+                        break;
+                    case "2":
+                        RegisterScreen.Register();
+                        break;
+                    case "0":
+                        exit = true;
+                        break;
+                }
             }
+
+       
         }
     }
 }
