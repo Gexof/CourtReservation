@@ -7,12 +7,15 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
+using CourtReservation.Models.Interfaces;
 
 namespace CourtReservation.Models
 {
     internal class AuthService
     {
-        private const string FileName = "C://Users//Mohamed Ashraf//Desktop//New folder//CourtReservation//CourtReservation//Data//admin.json";
+        private const string FileName = "C:/Users/Mohamed Alaa/Source/Repos/CourtReservation/CourtReservation/Data/admin.json";
+        private List<User> loadedUsers = new List<User>();
+
 
         public List<Admin> LoadUsers()
         {
@@ -35,10 +38,13 @@ namespace CourtReservation.Models
 
 
 
-        public void RegisterUser(string username, string password)
+        public void RegisterUser(int id ,string username, string password,string type)
         {
-            User newuser = new User(username,password);
-
+             List<User> zm = LoadUsers();
+            User newuser = new User(id, username, password, type);
+            loadedUsers.Add(newuser);
+            string json = JsonConvert.SerializeObject(loadedUsers, Formatting.Indented);
+            File.WriteAllText(FileName, json);
         }
     }
 }

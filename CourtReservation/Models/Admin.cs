@@ -13,6 +13,10 @@ namespace CourtReservation.Models
         public string UserName { get; set; }
         public string Password { get; set; }
 
+        public Admin()
+        {
+
+        }
         public Admin(int id, string userName, string password)
         {
             this.Id = id;

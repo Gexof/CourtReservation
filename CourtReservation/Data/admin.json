@@ -1,20 +1,8 @@
 [
   {
-    "Id": 1,
-    "UserName": "adminUser1",
-    "Password": "adminPassword1",
-    "Type":  "Admin"
-  },
-  {
-    "Id": 2,
-    "UserName": "adminUser2",
-    "Password": "adminPassword2",
-    "Type": "Admin"
-  },
-  {
-    "Id": 3,
-    "UserName": "adminUser3",
-    "Password": "adminPassword3",
-    "Type": "Admin"
+    "Id": 5250,
+    "UserName": "rfg",
+    "Password": "asdsda",
+    "UserType": "fsaas"
   }
 ]
