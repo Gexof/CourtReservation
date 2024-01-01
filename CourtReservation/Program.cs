@@ -14,6 +14,7 @@
             Console.WriteLine("Please Select an Option Register or Login");
             Console.WriteLine("[1] Register");
             Console.WriteLine("[2] Login");
+            Console.WriteLine("[2] Login");
 
 
 
