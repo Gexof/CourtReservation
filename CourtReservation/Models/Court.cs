@@ -9,7 +9,6 @@ public abstract class Court
     public string Type { get; set; }
 
     public Court(int CourtId , string Description , string Type)
-
     {
         this.CourtId = CourtId ;
         this.Descreption = Description ;
