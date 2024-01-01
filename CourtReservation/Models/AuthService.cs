@@ -12,15 +12,16 @@ namespace CourtReservation.Models
 {
     internal class AuthService
     {
-        private const string FileName = "admin.json";
+        private const string FileName = "C://Users//Mohamed Ashraf//Desktop//New folder//CourtReservation//CourtReservation//Data//admin.json";
         private List<User> users;
 
-        public List<User> LoadUsers()
+        public List<Admin> LoadUsers()
         {
             if (File.Exists(FileName))
             {
-                string json = File.ReadAllText(FileName);
-                List<User> loadedUsers = JsonConvert.DeserializeObject<List<User>>(json);
+
+                string jsonText = File.ReadAllText(FileName);
+                List<Admin> loadedUsers = JsonConvert.DeserializeObject<List<Admin>>(jsonText);
 
                 foreach (var user in loadedUsers)
                 {
@@ -30,7 +31,7 @@ namespace CourtReservation.Models
                 return loadedUsers;
             }
             Console.WriteLine("No user data found.");
-            return new List<User>();
+            return new List<Admin>();
         }
     }
 }

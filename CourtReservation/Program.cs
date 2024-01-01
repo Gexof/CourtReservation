@@ -31,9 +31,10 @@ namespace CourtReservation
 
 
 
-            string jsonText = File.ReadAllText("C://Users//Mohamed Ashraf//Desktop//New folder//CourtReservation//CourtReservation//Data//admin.json");
-            Admin admin = JsonConvert.DeserializeObject<Admin>(jsonText);
-            Console.WriteLine(admin.Id + " " + admin.UserName);
+            AuthService authService = new AuthService();
+            var admins = authService.LoadUsers(); 
+
+
 
 
         }
