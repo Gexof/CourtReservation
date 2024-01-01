@@ -18,9 +18,9 @@ namespace CourtReservation
         }
 
         //Parametarized Constructor
-        public Customer(int Id, string UserName, int Password, string ReservedList) : base(Id, UserName, Password)
+        public Customer(int id, string userName, int password, string reservedList) : base(id, userName, password, "Customer")
         {
-            this.ReservedList = ReservedList;
+            this.ReservedList = reservedList;
         }
 
         //Method

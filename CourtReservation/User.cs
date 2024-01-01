@@ -12,6 +12,7 @@ namespace CourtReservation
         public int Id { get; set; }
         public string UserName { get; set; }
         public int Password { get; set; }
+        public string UserType { get;}
 
 
         //Default Constructor
@@ -20,18 +21,22 @@ namespace CourtReservation
             Id = 0;
             UserName = "";
             Password = 0;
+            UserType = "";
         }
 
         //Parametarized Constructor
-        public User(int Id, string UserName, int Password)
+        public User(int id, string userName, int password,string userType)
         {
-            this.Id = Id;
-            this.UserName = UserName;
-            this.Password = Password;
+            this.Id = id;
+            this.UserName = userName;
+            this.Password = password;
+            this.UserType = userType;
 
         }
 
-        public User(string UserName, int Password) : this(100, UserName, Password) { }
+        public User(string userName, int password) : this(100, userName, password,"") { }
+
+
 
 
         //Method
@@ -40,8 +45,12 @@ namespace CourtReservation
             Console.WriteLine("Id is" + this.Id);
             Console.WriteLine("UserName is" + this.UserName);
             Console.WriteLine("Password is" + this.Password);
-
-
         }
     }
 }
+
+
+
+
+
+

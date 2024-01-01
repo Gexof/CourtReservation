@@ -15,11 +15,9 @@
             Console.WriteLine("[1] Register");
             Console.WriteLine("[2] Login");
 
-            string[] User = new string[] { "Customer", "Admin" };
-            Customer customer = new Customer(7, "Islam", 1234, "Court4");
-            customer.PrintUserData();
 
-
+            User user = new User("Mohamed",156456); 
+            user.PrintUserData();
 
 
         }
