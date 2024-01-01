@@ -40,16 +40,16 @@ namespace CourtReservation.Models
 
         public void RegisterUser(int id ,string username, string password,string type)
         {
-<<<<<<< HEAD
+
             User newuser = new User ( username ,password);
 
-=======
+
              List<User> zm = LoadUsers();
             User newuser = new User(id, username, password, type);
             loadedUsers.Add(newuser);
             string json = JsonConvert.SerializeObject(loadedUsers, Formatting.Indented);
             File.WriteAllText(FileName, json);
->>>>>>> ca8bf0c0aa2539f1c9d15700230432eab529da94
+
         }
     }
 }
