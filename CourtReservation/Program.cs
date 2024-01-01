@@ -1,6 +1,7 @@
 ﻿using CourtReservation.Models;
 using CourtReservation.Screens;
 using Microsoft.Win32;
+using Newtonsoft.Json;
 
 namespace CourtReservation
 {
@@ -28,9 +29,11 @@ namespace CourtReservation
             //    }
             //}
 
-            AuthService authService = new AuthService();
-            authService.LoadUsers();
-                
+
+
+            string jsonText = File.ReadAllText("C://Users//Mohamed Ashraf//Desktop//New folder//CourtReservation//CourtReservation//Data//admin.json");
+            Admin admin = JsonConvert.DeserializeObject<Admin>(jsonText);
+            Console.WriteLine(admin.Id + " " + admin.UserName);
 
 
         }

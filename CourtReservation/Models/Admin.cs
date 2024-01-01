@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace CourtReservation.Models
 {
-    internal class Admin : IUser
+    internal class Admin : User
     {
         public int Id { get; set; }
         public string UserName { get; set; }
-        public int Password { get; set; }
+        public string Password { get; set; }
 
-        public Admin(int id, string userName, int password)
+        public Admin(int id, string userName, string password)
         {
             this.Id = id;
             this.UserName = userName;

@@ -31,8 +31,6 @@ namespace CourtReservation.Models
             }
             Console.WriteLine("No user data found.");
             return new List<User>();
-
-
         }
     }
 }
