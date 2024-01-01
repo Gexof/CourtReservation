@@ -13,7 +13,6 @@ namespace CourtReservation.Models
     internal class AuthService
     {
         private const string FileName = "C://Users//Mohamed Ashraf//Desktop//New folder//CourtReservation//CourtReservation//Data//admin.json";
-        private List<User> users;
 
         public List<Admin> LoadUsers()
         {
@@ -32,6 +31,14 @@ namespace CourtReservation.Models
             }
             Console.WriteLine("No user data found.");
             return new List<Admin>();
+        }
+
+
+
+        public void RegisterUser(string username, string password)
+        {
+            User newuser = new User(username,password);
+
         }
     }
 }

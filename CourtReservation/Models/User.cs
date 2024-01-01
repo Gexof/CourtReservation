@@ -11,28 +11,21 @@ namespace CourtReservation.Models
         //Attribute
         //public int Id { get; set; }
         public string UserName { get; set; }
-        public int Password { get; set; }
+        public string Password { get; set; }
         public string UserType { get; }
 
 
-        //Default Constructor
-        public User()
-        {
-
-        }
-
 
         //Parametarized Constructor
-        public User(string userName, int password, string userType)
+        public User(string userName, string password, string userType)
         {
 
             UserName = userName;
             Password = password;
             UserType = userType;
-
         }
 
-        public User(string userName, int password) : this( userName, password, "") { }
+        public User(string userName, string password) : this( userName, password, "") { }
 
 
 
