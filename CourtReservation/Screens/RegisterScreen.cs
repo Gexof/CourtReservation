@@ -14,34 +14,30 @@ namespace CourtReservation.Screens
             Console.WriteLine("Please Select Account Type:");
             Console.WriteLine("[1] Customer");
             Console.WriteLine("[2] Admin");
-            int AccType = int.Parse(Console.ReadLine());
+            string UserChoice = Console.ReadLine();
 
-            if (AccType == 1 )
-            {
-                Console.Write("Username: ");
-                string username = Console.ReadLine();
-                Console.Write("\nPassowrd: ");
-                string password = Console.ReadLine();
 
-            } else if (AccType == 2 )
+            switch (UserChoice)
             {
-
-                Console.Clear();
-                Console.Write("Username: ");
-                string username = Console.ReadLine();
-                Console.Write("\nPassowrd: ");
-                string password = Console.ReadLine();
-                Console.Write("\nSystem Admin PIN: ");
-                string pin = Console.ReadLine();
-            } else
-            {
-                Console.WriteLine("Wrong Option");
+                case "1":
+                    Console.Write("Username: ");
+                    string username = Console.ReadLine();
+                    Console.Write("\nPassowrd: ");
+                    string password = Console.ReadLine();
+                    break;
+                case "2":
+                    Console.Clear();
+                    Console.Write("Username: ");
+                    username = Console.ReadLine();
+                    Console.Write("\nPassowrd: ");
+                    password = Console.ReadLine();
+                    Console.Write("\nSystem Admin PIN: ");
+                    string pin = Console.ReadLine();
+                    break;
+                default:
+                    Console.WriteLine("Wrong Option");
+                    break;
             }
-
-
-
-          
-
         }
     }
 }

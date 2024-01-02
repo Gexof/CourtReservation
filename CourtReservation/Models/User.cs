@@ -12,13 +12,13 @@ namespace CourtReservation.Models
         public int Id { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
-        public string UserType { get; }
+        public string UserType { get; set; }
 
 
         public User()
 
         {
-            // You can initialize default values if needed
+            
         }
 
 

@@ -14,12 +14,7 @@ namespace CourtReservation.Models
 {
     internal class AuthService
     {
-        private const string FileName = "C:/Users/Mohamed Ashraf/Desktop/New folder/CourtReservation/CourtReservation/Data/admin.json";
-        
-        private List<User> users = new();
-        // List of user in Json file
-
-
+        private const string FileName = "C:/Users/Mohamed Ashraf/Desktop/New folder/CourtReservation/CourtReservation/Data/Users.json";
 
         public List<User> LoadUsers()
         {
@@ -30,16 +25,13 @@ namespace CourtReservation.Models
 
                 foreach (var user in loadedUsers)
                 {
-                    Console.WriteLine($"Username: {user.UserName}, Password: {user.Password}");
+                    Console.WriteLine($"ID: {user.Id}, Username: {user.UserName}, Type: {user.UserType}");
                 }
-
                 return loadedUsers;
             }
             Console.WriteLine("No user data found.");
             return new List<User>();
         }
-
-
 
         public void RegisterUser(int id ,string username, string password,string type)
         {
@@ -49,6 +41,7 @@ namespace CourtReservation.Models
             string updateJson = JsonConvert.SerializeObject(users, Formatting.Indented); // Covert From List To Json Format
             File.WriteAllText(FileName, updateJson); // Write All Text Files to Json File 
         }
+
 
 
     }

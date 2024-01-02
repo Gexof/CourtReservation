@@ -10,6 +10,8 @@
 //    {
 //        int resrvationid { set; get; }
 //        dateOnly date { set; get; }
+
+
 //        public void show_reservation_details()
 //        {
 //            Console.WriteLine(resrvationid);
@@ -27,12 +29,6 @@
 //            this.resrvationid = resrvationid;
 //            this.date = date;
 //        }
-
-
-
-
-
-
 
 //    }
 

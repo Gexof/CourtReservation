@@ -20,10 +20,6 @@ namespace CourtReservation.Screens
             Console.WriteLine("[2] Register");
             Console.WriteLine("[0] Exit");
             Console.Write("Enter your choice: ");
-
-
-
-
         }
     }
 }
