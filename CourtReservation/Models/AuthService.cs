@@ -14,16 +14,14 @@ namespace CourtReservation.Models
 {
     internal class AuthService
     {
-<<<<<<< HEAD
+
         private const string FileName = "C:/Users/Mohamed Ashraf/Desktop/New folder/CourtReservation/CourtReservation/Data/Users.json";
-=======
-        private const string FileName = "C:\\Users\\Mohamed Alaa\\Source\\Repos\\CourtReservation\\CourtReservation\\Data\\Users.json";
+
         
         private List<User> users = new();
         // List of user in Json file
 
 
->>>>>>> f496f77a3a7ba3244d719b21e5a6f5d40389c70a
 
         public List<User> LoadUsers()
         {
