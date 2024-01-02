@@ -26,6 +26,7 @@ namespace CourtReservation.Screens
                     authService.LoadUsers();
                     Console.ReadKey();
                     break;
+
             }
         }
     }

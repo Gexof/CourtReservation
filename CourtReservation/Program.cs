@@ -31,18 +31,12 @@ namespace CourtReservation
 
 
 
-<<<<<<< HEAD
             //AuthService authService = new AuthService();
             //authService.LoadUsers();
 
 
-
-
-
-=======
             //User user = new();
             //User.login("Ali", "sdjfoavan");
->>>>>>> f496f77a3a7ba3244d719b21e5a6f5d40389c70a
 
             //authService.LoadUsers();
             //authService.login("Ali", "sdjfoavan");
