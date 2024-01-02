@@ -40,8 +40,7 @@ namespace CourtReservation.Screens
                     password = Console.ReadLine();
                     admin.login(username, password);
                     Console.Clear() ;
-                    DashbordScreen.DashbordView();
-                    admin.PrintUserData();
+                    DashbordAdminScreen.DashbordView();
                     break;
                 default:
                     Console.WriteLine("Wrong Option");

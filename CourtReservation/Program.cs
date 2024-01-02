@@ -28,23 +28,7 @@ namespace CourtReservation
                         break;
                 }
             }
-
-
-
-            //AuthService authService = new AuthService();
-            //authService.LoadUsers();
-
-
-            //User user = new();
-            //User.login("Ali", "sdjfoavan");
-
-            //authService.LoadUsers();
-            //authService.login("Ali", "sdjfoavan");
-
         }
-        //authService.RegisterUser(4, "Salem", "sdjfoavan", "Customer");
-        //authService.LoadUsers();
-
 
 
 

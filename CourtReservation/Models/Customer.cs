@@ -22,6 +22,11 @@ namespace CourtReservation.Models
         public Customer(int id, string userName, string password, string reservedList) :base (id,userName, password, "Customer") { }
 
         
+        public void ShowReserved() { }
+
+        public void Reservation() { }
+
+
 
 
     }

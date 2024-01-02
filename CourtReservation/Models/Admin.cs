@@ -17,11 +17,12 @@ namespace CourtReservation.Models
         public Admin(int id, string userName, string password): base(id, userName, password,"admin") { }
 
 
-        public void PrintUserData()
-        {
-            Console.WriteLine("Hi Admoon");
-        }
 
+        public void AddCourt() { }
+        public void RemoveCourt() { }
+        public void UpdateCourt() { }
+        public void ShowCourt() { }
+        public void AcceptRes() { }
 
     }
 }

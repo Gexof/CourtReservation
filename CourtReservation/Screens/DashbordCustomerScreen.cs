@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace CourtReservation.Screens
 {
-    internal class DashbordScreen
+    internal class DashbordCustomerScreen
     {
-        public static void DashbordView()
+        public static void DashbordCustomerView()
         {
 
-            User user= new();
-            Admin adimn= new();
+            User user = new();
+            Admin adimn = new();
 
 
             Console.WriteLine("=================== Welcome To Court Reservation =================== \n");
@@ -27,13 +27,6 @@ namespace CourtReservation.Screens
                     user.LoadUsers();
                     Console.ReadKey();
                     break;
-                case "2":
-                    adimn.PrintUserData();
-                    Console.ReadKey();
-                    break;
-
-
-
             }
         }
     }

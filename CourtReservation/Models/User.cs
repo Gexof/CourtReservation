@@ -44,11 +44,6 @@ namespace CourtReservation.Models
         public User(string userName, string password) : this( 0,userName, password, "") { }
 
 
-
-
-
-
-
         public List<User> LoadUsers()
         {
             if (File.Exists(FileName))
