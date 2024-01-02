@@ -18,7 +18,7 @@ namespace CourtReservation
                 switch (userChosie)
                 {
                     case "1":
-                        Console.WriteLine("Login Screen");
+                        LoginScreen.LoginView();
                         break;
                     case "2":
                         RegisterScreen.Register();

@@ -30,18 +30,17 @@ namespace CourtReservation.Models
                 string jsonText = File.ReadAllText(FileName);
                 List<User> loadedUsers = JsonConvert.DeserializeObject<List<User>>(jsonText);
 
-<<<<<<< HEAD
                 foreach (var user in loadedUsers)
                 {
                     Console.WriteLine($"ID: {user.Id}, Username: {user.UserName}, Type: {user.UserType}");
                 }
-=======
+
                 //foreach (var user in loadedUsers)
                 //{
                 //    Console.WriteLine($"Username: {user.UserName}, Password: {user.Password}");
                 //}
 
->>>>>>> f496f77a3a7ba3244d719b21e5a6f5d40389c70a
+
                 return loadedUsers;
             }
             Console.WriteLine("No user data found.");

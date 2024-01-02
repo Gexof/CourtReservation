@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CourtReservation.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,16 +7,18 @@ using System.Threading.Tasks;
 
 namespace CourtReservation.Screens
 {
-    internal class RegisterScreen
+    internal class LoginScreen
     {
-        public static void Register()
-        {
-            Console.WriteLine("=================== Register New Account =================== \n");
+
+
+        public static void LoginView() {
+            Console.WriteLine("=================== Login =================== \n");
             Console.WriteLine("Please Select Account Type:");
             Console.WriteLine("[1] Customer");
             Console.WriteLine("[2] Admin");
-            string UserChoice = Console.ReadLine(); 
 
+            AuthService authService = new();
+            string UserChoice = Console.ReadLine();
 
             switch (UserChoice)
             {
@@ -24,6 +27,7 @@ namespace CourtReservation.Screens
                     string username = Console.ReadLine();
                     Console.Write("\nPassowrd: ");
                     string password = Console.ReadLine();
+                    authService.login(username,password);
                     break;
                 case "2":
                     Console.Clear();
@@ -31,13 +35,14 @@ namespace CourtReservation.Screens
                     username = Console.ReadLine();
                     Console.Write("\nPassowrd: ");
                     password = Console.ReadLine();
-                    Console.Write("\nSystem Admin PIN: ");
-                    string pin = Console.ReadLine();
+                    authService.login(username, password);
+                    Console.Clear() ;
+                    DashbordScreen.DashbordView();
                     break;
                 default:
                     Console.WriteLine("Wrong Option");
                     break;
-            }
+            };
         }
     }
 }
