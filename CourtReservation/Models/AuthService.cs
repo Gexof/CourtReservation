@@ -14,7 +14,7 @@ namespace CourtReservation.Models
 {
     internal class AuthService
     {
-        private const string FileName = "C:/Users/Mohamed Ashraf/Desktop/New folder/CourtReservation/CourtReservation/Data/admin.json";
+        private const string FileName = "C:\\Users\\Mohamed Alaa\\Source\\Repos\\CourtReservation\\CourtReservation\\Data\\Users.json";
         
         private List<User> users = new();
         // List of user in Json file
@@ -28,10 +28,10 @@ namespace CourtReservation.Models
                 string jsonText = File.ReadAllText(FileName);
                 List<User> loadedUsers = JsonConvert.DeserializeObject<List<User>>(jsonText);
 
-                foreach (var user in loadedUsers)
-                {
-                    Console.WriteLine($"Username: {user.UserName}, Password: {user.Password}");
-                }
+                //foreach (var user in loadedUsers)
+                //{
+                //    Console.WriteLine($"Username: {user.UserName}, Password: {user.Password}");
+                //}
 
                 return loadedUsers;
             }
@@ -50,6 +50,26 @@ namespace CourtReservation.Models
             File.WriteAllText(FileName, updateJson); // Write All Text Files to Json File 
         }
 
+        public void login (string userName, string password)
+        {
+            List<User> users = LoadUsers();
+
+            for (int i = 0; i < 3; i++)
+            {
+                foreach (var user in users)
+                {
+                if (user.UserName == userName && user.Password == password)
+                {
+                        Console.WriteLine("Login successful");
+                         return; // Login successful, exit the method
+                }
+                }
+                    // If no matching user is found
+                 Console.WriteLine("Sorry, try again");
+            }
+                 Console.WriteLine("Sorry, You can't login again");
+
+        }
 
     }
 }

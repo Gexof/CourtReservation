@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CourtReservation.Models
 {
-    internal class User
+    internal class User /*: AuthService*/
     {
         //Attribute
         public int Id { get; set; }

@@ -26,7 +26,7 @@ namespace CourtReservation.Models
 
         public void PrintUserData()
         {
-            
+         
         }
     }
 }
