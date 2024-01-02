@@ -14,5 +14,6 @@ public abstract class Court
         this.Descreption = Description ;
         this.Type = Type ;
     }
-    public abstract string ShowCollection(string collection);
+    //public abstract string ShowCollection(string collection);
+
 }
