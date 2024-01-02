@@ -27,7 +27,5 @@ namespace CourtReservation.Models
         public void Reservation() { }
 
 
-
-
     }
 }

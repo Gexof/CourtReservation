@@ -4,7 +4,6 @@ public class football:Court
 {
 	string surfacetype { set; get; }
 
-	base.ShowCollection();
 
 	public void update()
 	{
@@ -19,7 +18,7 @@ public class football:Court
 
 	}
 
-	puplic void accept()
+	public void accept()
 	{
 
 	}

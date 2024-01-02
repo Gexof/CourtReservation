@@ -13,7 +13,7 @@ public class Paddel : Court
 
 	}
 
-	public Paddel(bool hasGlassWalls, int CourtId, string Description, string Type)
+	public Paddel(bool hasGlassWalls, int CourtId, string Descreption, string Type)
 		: base(CourtId, Descreption, Type)
 	{
 		this.hasGlassWalls = hasGlassWalls;
