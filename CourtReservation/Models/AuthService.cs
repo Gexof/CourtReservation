@@ -14,7 +14,16 @@ namespace CourtReservation.Models
 {
     internal class AuthService
     {
+<<<<<<< HEAD
         private const string FileName = "C:/Users/Mohamed Ashraf/Desktop/New folder/CourtReservation/CourtReservation/Data/Users.json";
+=======
+        private const string FileName = "C:\\Users\\Mohamed Alaa\\Source\\Repos\\CourtReservation\\CourtReservation\\Data\\Users.json";
+        
+        private List<User> users = new();
+        // List of user in Json file
+
+
+>>>>>>> f496f77a3a7ba3244d719b21e5a6f5d40389c70a
 
         public List<User> LoadUsers()
         {
@@ -23,10 +32,18 @@ namespace CourtReservation.Models
                 string jsonText = File.ReadAllText(FileName);
                 List<User> loadedUsers = JsonConvert.DeserializeObject<List<User>>(jsonText);
 
+<<<<<<< HEAD
                 foreach (var user in loadedUsers)
                 {
                     Console.WriteLine($"ID: {user.Id}, Username: {user.UserName}, Type: {user.UserType}");
                 }
+=======
+                //foreach (var user in loadedUsers)
+                //{
+                //    Console.WriteLine($"Username: {user.UserName}, Password: {user.Password}");
+                //}
+
+>>>>>>> f496f77a3a7ba3244d719b21e5a6f5d40389c70a
                 return loadedUsers;
             }
             Console.WriteLine("No user data found.");
@@ -42,6 +59,26 @@ namespace CourtReservation.Models
             File.WriteAllText(FileName, updateJson); // Write All Text Files to Json File 
         }
 
+        public void login (string userName, string password)
+        {
+            List<User> users = LoadUsers();
+
+            for (int i = 0; i < 3; i++)
+            {
+                foreach (var user in users)
+                {
+                if (user.UserName == userName && user.Password == password)
+                {
+                        Console.WriteLine("Login successful");
+                         return; // Login successful, exit the method
+                }
+                }
+                    // If no matching user is found
+                 Console.WriteLine("Sorry, try again");
+            }
+                 Console.WriteLine("Sorry, You can't login again");
+
+        }
 
 
     }
