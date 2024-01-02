@@ -17,27 +17,31 @@ namespace CourtReservation.Screens
             Console.WriteLine("[1] Customer");
             Console.WriteLine("[2] Admin");
 
-            AuthService authService = new();
+            User user = new();
+
             string UserChoice = Console.ReadLine();
 
             switch (UserChoice)
             {
                 case "1":
+                    Customer customer = new();
                     Console.Write("Username: ");
                     string username = Console.ReadLine();
                     Console.Write("\nPassowrd: ");
                     string password = Console.ReadLine();
-                    authService.login(username,password);
+                    customer.login(username,password);
                     break;
                 case "2":
+                    Admin admin = new();
                     Console.Clear();
                     Console.Write("Username: ");
                     username = Console.ReadLine();
                     Console.Write("\nPassowrd: ");
                     password = Console.ReadLine();
-                    authService.login(username, password);
+                    admin.login(username, password);
                     Console.Clear() ;
                     DashbordScreen.DashbordView();
+                    admin.PrintUserData();
                     break;
                 default:
                     Console.WriteLine("Wrong Option");

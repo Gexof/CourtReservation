@@ -12,7 +12,8 @@ namespace CourtReservation.Screens
         public static void DashbordView()
         {
 
-            AuthService authService = new();
+            User user= new();
+            Admin adimn= new();
 
 
             Console.WriteLine("=================== Welcome To Court Reservation =================== \n");
@@ -23,9 +24,15 @@ namespace CourtReservation.Screens
             switch (UserChoice)
             {
                 case "1":
-                    authService.LoadUsers();
+                    user.LoadUsers();
                     Console.ReadKey();
                     break;
+                case "2":
+                    adimn.PrintUserData();
+                    Console.ReadKey();
+                    break;
+
+
 
             }
         }

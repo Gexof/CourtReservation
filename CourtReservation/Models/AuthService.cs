@@ -17,12 +17,6 @@ namespace CourtReservation.Models
 
         private const string FileName = "C:/Users/Mohamed Ashraf/Desktop/New folder/CourtReservation/CourtReservation/Data/Users.json";
 
-        
-        private List<User> users = new();
-        // List of user in Json file
-
-
-
         public List<User> LoadUsers()
         {
             if (File.Exists(FileName))
