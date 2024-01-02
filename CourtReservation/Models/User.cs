@@ -16,7 +16,7 @@ namespace CourtReservation.Models
 
 
         public User()
-<<<<<<< HEAD
+
         {
             // You can initialize default values if needed
         }
@@ -24,8 +24,7 @@ namespace CourtReservation.Models
 
         //Parametarized Constructor
         public User(string userName, string password, string userType)
-=======
->>>>>>> ca8bf0c0aa2539f1c9d15700230432eab529da94
+
         {
 
         }

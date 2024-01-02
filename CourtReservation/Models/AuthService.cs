@@ -8,22 +8,25 @@ using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
 using CourtReservation.Models.Interfaces;
+using System.Text.Encodings.Web;
 
 namespace CourtReservation.Models
 {
     internal class AuthService
     {
-        private const string FileName = "C:/Users/Mohamed Alaa/Source/Repos/CourtReservation/CourtReservation/Data/admin.json";
-        private List<User> loadedUsers = new List<User>();
+        private const string FileName = "C:/Users/Mohamed Ashraf/Desktop/New folder/CourtReservation/CourtReservation/Data/admin.json";
+        
+        private List<User> users = new();
+        // List of user in Json file
 
 
-        public List<Admin> LoadUsers()
+
+        public List<User> LoadUsers()
         {
             if (File.Exists(FileName))
             {
-
                 string jsonText = File.ReadAllText(FileName);
-                List<Admin> loadedUsers = JsonConvert.DeserializeObject<List<Admin>>(jsonText);
+                List<User> loadedUsers = JsonConvert.DeserializeObject<List<User>>(jsonText);
 
                 foreach (var user in loadedUsers)
                 {
@@ -33,23 +36,20 @@ namespace CourtReservation.Models
                 return loadedUsers;
             }
             Console.WriteLine("No user data found.");
-            return new List<Admin>();
+            return new List<User>();
         }
 
 
 
         public void RegisterUser(int id ,string username, string password,string type)
         {
-
-            User newuser = new User ( username ,password);
-
-
-             List<User> zm = LoadUsers();
-            User newuser = new User(id, username, password, type);
-            loadedUsers.Add(newuser);
-            string json = JsonConvert.SerializeObject(loadedUsers, Formatting.Indented);
-            File.WriteAllText(FileName, json);
-
+            User newuser = new(id, username, password, type);
+            List<User> users = LoadUsers(); // Loading The List os user from Json File
+            users.Add(newuser); // Add New user To the users List That Retrived from Json file
+            string updateJson = JsonConvert.SerializeObject(users, Formatting.Indented); // Covert From List To Json Format
+            File.WriteAllText(FileName, updateJson); // Write All Text Files to Json File 
         }
+
+
     }
 }
