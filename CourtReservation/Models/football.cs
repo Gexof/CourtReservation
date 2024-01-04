@@ -22,8 +22,8 @@ public class football : Court
     {
 
     }
-    public football(string surfacetype, int CourtId, string Descreption, string Type)
-        : base(CourtId, Descreption, Type)
+    public football(string surfacetype, int CourtId, string Description, string Type)
+        : base(CourtId, Description, Type)
     {
         this.surfacetype = surfacetype;
     }

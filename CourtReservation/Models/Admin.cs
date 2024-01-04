@@ -1,4 +1,5 @@
 ﻿using CourtReservation.Models.Interfaces;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,29 @@ namespace CourtReservation.Models
 
 
         public Admin(int id, string userName, string password) : base(id, userName, password, "admin") { }
+
+
+        //Show all courts
+        public List<Court> ShowCourt()
+        {
+
+            if (File.Exists(CourtPath))
+            {
+                string jsonText = File.ReadAllText(CourtPath);
+                List<Court> ShowCourt = JsonConvert.DeserializeObject<List<Court>>(jsonText);
+
+                foreach (var court in ShowCourt)
+                {
+                    Console.WriteLine($"CourtID: {court.CourtId}, Description: {court.Description}, Type: {court.Type}");
+                }
+
+                return ShowCourt;
+            }
+            Console.WriteLine("No user data found.");
+            return new List<Court>();
+
+
+        }
 
 
         // Add a new court with an integer CourtId
@@ -60,18 +84,10 @@ namespace CourtReservation.Models
             }
         }
 
-        //Show all courts
-        public void ShowCourt()
-        {
-            Console.WriteLine("Available Courts:");
-            foreach (var court in courts)
-            {
-                Console.WriteLine(court);
 
-            }
-        }
 
         // Method to accept a court (just as an example)
+
         public void AcceptRes()
         {
             Console.WriteLine("Court accepted");
