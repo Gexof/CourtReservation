@@ -1,0 +1,51 @@
+[
+  {
+    "CourtId": 101,
+    "Description": "5-a-side football pitch that has 40 yards (36.5m) long and 30 yards (27.5m) wide.",
+    "type": "Football"
+  },
+
+  {
+    "CourtId": 102,
+    "Description": "7-a-side football pitch that has 60 yards (54.87m) long and 40 yards (36.58m) wide",
+    "type": "Football"
+  },
+
+  {
+    "CourtId": 103,
+    "Description": "a 9 v 9 football pitch  that has 80 yards (73.15m) x 50 yards (45.72m).",
+    "type": "Football"
+  },
+
+  {
+    "CourtId": 104,
+    "Description": "11 v 11 football pitch and the  dimensions  is  110 yards (100.6m) x 70 yards (64.0m)",
+    "type": "Football"
+  },
+
+  {
+    "CourtId": 201,
+    "Description": " Pro Zone court is a top-tier paddle court designed for professional-level play equipped with cutting-edge surfaces and lighting for competitivematches",
+    "type": "Paddel"
+  },
+
+  {
+    "CourtId": 202,
+    "Description": "Scenic Riverside Court: Enjoy the game amidst picturesque river views.A tranquil paddle court nestled by the riverside,offering a serene and enjoyable playing experience   ",
+
+    "type": "Paddel"
+  },
+
+  {
+    "CourtId": 203,
+
+    "Description": " Family-Friendly Court: Perfect for family outings! A vibrant paddle court with smaller dimensions, ideal for introducing kids to the sport while having a fun family playtime. ",
+    "type": "Paddel"
+  },
+
+  {
+    "CourtId": 204,
+    "Description": "Community Hub Court: The heart of local community events. A centrally located paddle court hosting regular tournaments fostering a sense of camaraderie among players of all levels. ",
+    "type": "Paddel"
+  }
+]

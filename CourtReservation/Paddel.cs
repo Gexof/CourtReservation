@@ -2,21 +2,21 @@
 
 public class Paddel : Court
 {
-	bool hasGlassWalls { set; get; }
+    bool hasGlassWalls { set; get; }
 
-	public void Rerserv()
-	{
+    public void Rerserv()
+    {
 
-	}
-	public void ShowReserved()
-	{
+    }
+    public void ShowReserved()
+    {
 
-	}
+    }
 
-	public Paddel(bool hasGlassWalls, int CourtId, string Description, string Type)
-		: base(CourtId, Descreption, Type)
-	{
-		this.hasGlassWalls = hasGlassWalls;
-	}
+    public Paddel(bool hasGlassWalls, int CourtId, string Description, string Type)
+        : base(CourtId, Descreption, Type)
+    {
+        this.hasGlassWalls = hasGlassWalls;
+    }
 
 }
