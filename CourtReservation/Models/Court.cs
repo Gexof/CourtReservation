@@ -1,6 +1,6 @@
 ﻿using System;
 
-public abstract class Court
+public  class Court
 {
     public int CourtId { get; set; }
 
@@ -15,5 +15,10 @@ public abstract class Court
         this.Type = Type ;
     }
     //public abstract string ShowCollection(string collection);
+
+    public Court(int CourtId)
+    {
+        this.CourtId = CourtId;
+    }
 
 }
