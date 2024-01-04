@@ -6,7 +6,7 @@
 
 namespace CourtReservation.Models
 {
-    internal class Reservation:User,Court
+    internal class Reservation : User, Court
     {
 
 
@@ -17,13 +17,13 @@ namespace CourtReservation.Models
         public string CourtType { set; get; }
 
         public string UserName { set; get; }
-        
 
 
-       
-        
+
+
+
         public Reservation(int ResrvationId, string UserName, string CourtType, DateOnly Date)
-            : base(username, type) 
+            : base(username, type)
         {
             this.ResrvationId = ResrvationId;
             this.Date = Date;
@@ -41,3 +41,5 @@ namespace CourtReservation.Models
         {
 
         }
+    }
+}
