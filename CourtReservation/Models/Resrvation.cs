@@ -1,73 +1,43 @@
-﻿////using System;
-////using System.Collections.Generic;
-////using System.Linq;
-////using System.Text;
-////using System.Threading.Tasks;
+﻿ using System;
+ using System.Collections.Generic;
+ using System.Linq;
+ using System.Text;
+ using System.Threading.Tasks;
 
-//<<<<<<< HEAD
-//namespace CourtReservation.Models
-//{
-//    internal class Reservation()
-//    {
-
-
-//        int resrvationid { set; get; }
-//        dateOnly date { set; get; }
-
-//        public void show_reservation_details()
-//        {
-//            Console.WriteLine(resrvationid);
-//            Console.WriteLine(username);
-//            Console.WriteLine(courttype);
-//            Console.WriteLine(date);
-//        }
-//        public void cancel_reservation()
-//        {
-
-//        }
-//        public Reservation(int resrvationid, string username, string courttype, dateOnly date)
-//            : base(username, type)
-//        {
-//            this.resrvationid = resrvationid;
-//            this.date = date;
-//        }
-//=======
-////namespace CourtReservation.Models
-////{
-////    internal class Reservation:Court,User
-////    {
-////        int resrvationid { set; get; }
-////        dateOnly date { set; get; }
-//>>>>>>> 1d5e75ce747333cf1c79406feee0b2be4d5bc998
+namespace CourtReservation.Models
+{
+    internal class Reservation:User,Court
+    {
 
 
-////        public void show_reservation_details()
-////        {
-////            Console.WriteLine(resrvationid);
-////            Console.WriteLine(username);
-////            Console.WriteLine(courttype);
-////            Console.WriteLine(date);
-////        }
-////        public void cancel_reservation()
-////        {
+        public int ResrvationId { set; get; }
 
-////        }
-////        public Reservation(int resrvationid, string username,string courttype,dateOnly date)
-////            :base(username,type)
-////        {
-////            this.resrvationid = resrvationid;
-////            this.date = date;
-////        }
+        public DateOnly Date { set; get; }
 
-////    }
+        public string CourtType { set; get; }
+
+        public string UserName { set; get; }
+        
 
 
-//<<<<<<< HEAD
+       
+        
+        public Reservation(int ResrvationId, string UserName, string CourtType, DateOnly Date)
+            : base(username, type) 
+        {
+            this.ResrvationId = ResrvationId;
+            this.Date = Date;
+            this.UserName = UserName;
+            this.CourtType = CourtType;
+        }
+        public void Show_Reservation_Details()
+        {
+            Console.WriteLine(ResrvationId);
+            Console.WriteLine(UserName);
+            Console.WriteLine(CourtType);
+            Console.WriteLine(Date);
+        }
+        public void Cancel_Reservation()
+        {
 
-//    }
-
-
-//}
-//=======
-////}
-//>>>>>>> 1d5e75ce747333cf1c79406feee0b2be4d5bc998
+        }
