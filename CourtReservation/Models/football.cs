@@ -5,7 +5,6 @@ public class football : Court
 {
     string surfacetype { set; get; }
 
-	base.ShowCollection();
 
     public void update()
     {
@@ -22,6 +21,7 @@ public class football : Court
     puplic void accept()
     {
 
+<<<<<<< HEAD:CourtReservation/football.cs
     }
     public football(string surfacetype, int CourtId, string Descreption, string Type)
         : base(CourtId, Descreption, Type)
@@ -29,3 +29,17 @@ public class football : Court
         this.surfacetype = surfacetype;
     }
 }
+=======
+	public void accept()
+	{
+
+	}
+
+
+	public football( string surfacetype,int CourtId,string Descreption,string Type)
+		:base(CourtId, Descreption, Type)
+	{
+		this.surfacetype = surfacetype;
+	}
+}
+>>>>>>> b8143d2f0d4d516ed13ab2c6d5fb8d0cb4f7eec3:CourtReservation/Models/football.cs

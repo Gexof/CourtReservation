@@ -10,7 +10,7 @@ namespace CourtReservation.Models
     internal class User /*: AuthService*/
     {
 
-        private const string FileName = "C:/Users/Mohamed Ashraf/Desktop/New folder/CourtReservation/CourtReservation/Data/Users.json";
+        private const string FileName = "C:\\Users\\thepe\\source\\repos\\CourtReservation";
 
         //Attribute
         public int Id { get; set; }

@@ -1,73 +1,45 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
+﻿ using System;
+ using System.Collections.Generic;
+ using System.Linq;
+ using System.Text;
+ using System.Threading.Tasks;
 
-<<<<<<< HEAD
 namespace CourtReservation.Models
 {
-    internal class Reservation()
+    internal class Reservation : User, Court
     {
 
 
-        int resrvationid { set; get; }
-        dateOnly date { set; get; }
+        public int ResrvationId { set; get; }
 
-        public void show_reservation_details()
+        public DateOnly Date { set; get; }
+
+        public string CourtType { set; get; }
+
+        public string UserName { set; get; }
+
+
+
+
+
+        public Reservation(int ResrvationId, string UserName, string CourtType, DateOnly Date)
+            : base()
         {
-            Console.WriteLine(resrvationid);
-            Console.WriteLine(username);
-            Console.WriteLine(courttype);
-            Console.WriteLine(date);
+            this.ResrvationId = ResrvationId;
+            this.Date = Date;
+            this.UserName = UserName;
+            this.CourtType = CourtType;
         }
-        public void cancel_reservation()
+        public void Show_Reservation_Details()
+        {
+            Console.WriteLine(ResrvationId);
+            Console.WriteLine(UserName);
+            Console.WriteLine(CourtType);
+            Console.WriteLine(Date);
+        }
+        public void Cancel_Reservation()
         {
 
         }
-        public Reservation(int resrvationid, string username, string courttype, dateOnly date)
-            : base(username, type)
-        {
-            this.resrvationid = resrvationid;
-            this.date = date;
-        }
-=======
-//namespace CourtReservation.Models
-//{
-//    internal class Reservation:Court,User
-//    {
-//        int resrvationid { set; get; }
-//        dateOnly date { set; get; }
->>>>>>> 1d5e75ce747333cf1c79406feee0b2be4d5bc998
-
-
-//        public void show_reservation_details()
-//        {
-//            Console.WriteLine(resrvationid);
-//            Console.WriteLine(username);
-//            Console.WriteLine(courttype);
-//            Console.WriteLine(date);
-//        }
-//        public void cancel_reservation()
-//        {
-
-//        }
-//        public Reservation(int resrvationid, string username,string courttype,dateOnly date)
-//            :base(username,type)
-//        {
-//            this.resrvationid = resrvationid;
-//            this.date = date;
-//        }
-
-//    }
-
-
-<<<<<<< HEAD
-
     }
-
-
-}
-=======
-//}
->>>>>>> 1d5e75ce747333cf1c79406feee0b2be4d5bc998
+    }
