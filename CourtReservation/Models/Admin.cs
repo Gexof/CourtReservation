@@ -10,7 +10,7 @@ namespace CourtReservation.Models
 {
     internal class Admin : User
     {
-        private const string CourtPath = "C:\\Users\\thepe\\source\\repos\\CourtReservation\\CourtReservation\\Data\\Court.json";
+        private const string CourtPath = "C:\\Users\\Alex\\Source\\Repos\\CourtReservation\\CourtReservation\\Data\\Court.json";
         private List<Court> courts;
 
         public Admin()
@@ -46,28 +46,27 @@ namespace CourtReservation.Models
 
 
         // Add a new court with an integer CourtId
-        public void AddCourt(int courtId)
+        public void AddCourt(int courtId, string Description, string Type)
         {
-            Court newCourt = new Court(courtId);
-            courts.Add(newCourt);
+            List<Court> existingCourts = ShowCourt(); // Read existing data
+
+            // Create a new court
+            Court newCourt = new Court { CourtId = courtId, Description = Description, Type = Type };
+
+            // Add the new court to the existing list
+            existingCourts.Add(newCourt);
+
+            // Save the updated list back to the file
+            string updatedJson = JsonConvert.SerializeObject(existingCourts, Formatting.Indented);
+            File.WriteAllText(CourtPath, updatedJson);
+
             Console.WriteLine($"Added Court ID: {courtId}");
+
+
         }
 
 
-        //Remove a court by ID
-        public void RemoveCourt(int courtIdToRemove)
-        {
-            Court courtToRemove = courts.Find(court => court.CourtId == courtIdToRemove);
-            if (courtToRemove != null)
-            {
-                courts.Remove(courtToRemove);
-                Console.WriteLine($"Removed Court ID: {courtIdToRemove}");
-            }
-            else
-            {
-                Console.WriteLine($"Court ID {courtIdToRemove} not found");
-            }
-        }
+
 
         // Update a court's ID
         public void UpdateCourt(int oldCourtId, int newCourtId)
@@ -98,18 +97,32 @@ namespace CourtReservation.Models
                 Console.WriteLine("Court.json not found");
             }
         }
+
+        //Remove a court by ID
+        public void RemoveCourt(int courtIdToRemove)
+        {
+            Court courtToRemove = courts.Find(court => court.CourtId == courtIdToRemove);
+            if (courtToRemove != null)
+            {
+                courts.Remove(courtToRemove);
+                Console.WriteLine($"Removed Court ID: {courtIdToRemove}");
+            }
+            else
+            {
+                Console.WriteLine($"Court ID {courtIdToRemove} not found");
+            }
+        }
+
+        // Method to accept a court (just as an example)
+
+        //public void AcceptRes()
+        //{
+        //  Console.WriteLine("Court accepted");
+        // Additional logic for accepting a court can be added here
+
+        //}
+
     }
 
 
-
-               // Method to accept a court (just as an example)
-
-               //public void AcceptRes()
-                //{
-                //  Console.WriteLine("Court accepted");
-                // Additional logic for accepting a court can be added here
-     
-               //}
-
-    
 }
