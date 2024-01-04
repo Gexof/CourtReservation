@@ -10,7 +10,7 @@ namespace CourtReservation.Models
 {
     internal class Admin : User
     {
-        private const string CourtPath = "C:\\Users\\Alex\\Source\\Repos\\CourtReservation\\CourtReservation\\Data\\Court.json";
+        private const string CourtPath = "C:\\Users\\thepe\\source\\repos\\CourtReservation\\CourtReservation\\Data\\Court.json";
         private List<Court> courts;
 
         public Admin()
@@ -72,28 +72,44 @@ namespace CourtReservation.Models
         // Update a court's ID
         public void UpdateCourt(int oldCourtId, int newCourtId)
         {
-            Court courtToUpdate = courts.Find(court => court.CourtId == oldCourtId);
-            if (courtToUpdate != null)
+            if (File.Exists(CourtPath))
             {
-                courtToUpdate.CourtId = newCourtId;
-                Console.WriteLine($"Updated Court ID from '{oldCourtId}' to '{newCourtId}'");
+                string jsonText = File.ReadAllText(CourtPath);
+                List<Court> courts = JsonConvert.DeserializeObject<List<Court>>(jsonText);
+
+                Court courtToUpdate = courts.Find(court => court.CourtId == oldCourtId);
+                if (courtToUpdate != null)
+                {
+                    courtToUpdate.CourtId = newCourtId;
+
+                    // Serialize the updated data and write it back to the JSON file
+                    string updatedJson = JsonConvert.SerializeObject(courts, Formatting.Indented);
+                    File.WriteAllText(CourtPath, updatedJson);
+
+                    Console.WriteLine($"Updated Court ID from '{oldCourtId}' to '{newCourtId}' in Court.json");
+                }
+                else
+                {
+                    Console.WriteLine($"Court ID {oldCourtId} not found");
+                }
             }
             else
             {
-                Console.WriteLine($"Court ID {oldCourtId} not found");
+                Console.WriteLine("Court.json not found");
             }
         }
-
-
-
-        // Method to accept a court (just as an example)
-
-        public void AcceptRes()
-        {
-            Console.WriteLine("Court accepted");
-            // Additional logic for accepting a court can be added here
-
-        }
-
     }
+
+
+
+               // Method to accept a court (just as an example)
+
+               //public void AcceptRes()
+                //{
+                //  Console.WriteLine("Court accepted");
+                // Additional logic for accepting a court can be added here
+     
+               //}
+
+    
 }
