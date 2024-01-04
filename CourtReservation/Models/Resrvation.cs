@@ -6,7 +6,7 @@
 
 namespace CourtReservation.Models
 {
-    internal class Reservation : User, Court
+    internal class Reservation /*: User, Court*/
     {
 
 
