@@ -23,7 +23,7 @@ namespace CourtReservation.Models
 
 
         public Reservation(int ResrvationId, string UserName, string CourtType, DateOnly Date)
-            : base(username, type)
+            : base()
         {
             this.ResrvationId = ResrvationId;
             this.Date = Date;
@@ -42,4 +42,4 @@ namespace CourtReservation.Models
 
         }
     }
-}
+    }
