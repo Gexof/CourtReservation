@@ -66,8 +66,6 @@ namespace CourtReservation.Models
         }
 
 
-
-
         // Update a court's ID
         public void UpdateCourt(int oldCourtId, int newCourtId)
         {
@@ -99,22 +97,30 @@ namespace CourtReservation.Models
         }
 
         //Remove a court by ID
-        public void RemoveCourt(int courtIdToRemove)
+        public void RemoveCourt(int courtId)
         {
-            Court courtToRemove = courts.Find(court => court.CourtId == courtIdToRemove);
+            List<Court> existingCourts = ShowCourt(); // Get the list of courts
+
+            Court courtToRemove = existingCourts.Find(Court => Court.CourtId == courtId); 
+
             if (courtToRemove != null)
             {
-                courts.Remove(courtToRemove);
-                Console.WriteLine($"Removed Court ID: {courtIdToRemove}");
+                existingCourts.Remove(courtToRemove);
+
+                // Save the updated list back to the file
+                string updatedJson = JsonConvert.SerializeObject(existingCourts, Formatting.Indented);
+                File.WriteAllText(CourtPath, updatedJson);
+
+                Console.WriteLine($"Removed Court ID: {courtId}");
             }
             else
             {
-                Console.WriteLine($"Court ID {courtIdToRemove} not found");
+                Console.WriteLine($"Court ID {courtId} not found.");
             }
         }
 
-        // Method to accept a court (just as an example)
 
+        // Method to accept a court (just as an example)
         //public void AcceptRes()
         //{
         //  Console.WriteLine("Court accepted");
