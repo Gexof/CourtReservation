@@ -10,7 +10,11 @@ namespace CourtReservation
         static void Main(string[] args)
         {
 
-            Admin admin = new Admin();
+            //Admin admin = new Admin();
+
+            //admin.ShowCourt();
+            //admin.AddCourt();
+
 
             //////Show all courts
             //admin.ShowCourt();
@@ -18,7 +22,7 @@ namespace CourtReservation
 
             /////////////
 
-            //// Add a new court with an integer CourtId
+            // Add a new court with an integer CourtId
             //Console.WriteLine("Enter Court ID to add:");
             //if (int.TryParse(Console.ReadLine(), out int courtId))
             //{
@@ -39,57 +43,63 @@ namespace CourtReservation
 
             // Update a court by CourtId
 
-            Console.WriteLine("Enter the old Court ID to update:");
-            if (int.TryParse(Console.ReadLine(), out int oldId))
-            {
-                Console.WriteLine("Enter the new Court ID:");
-                if (int.TryParse(Console.ReadLine(), out int newId))
-                {
-                    admin.UpdateCourt(oldId, newId);
-                }
-                else
-                {
-                    Console.WriteLine("Invalid input for new Court ID. Please enter a valid integer.");
-                }
-            }
-            else
-            {
-                Console.WriteLine("Invalid input for old Court ID. Please enter a valid integer.");
-            }
+            //Console.WriteLine("Enter the old Court ID to update:");
+            //if (int.TryParse(Console.ReadLine(), out int oldId))
+            //{
+            //    Console.WriteLine("Enter the new Court ID:");
+            //    if (int.TryParse(Console.ReadLine(), out int newId))
+            //    {
+            //        admin.UpdateCourt(oldId, newId);
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Invalid input for new Court ID. Please enter a valid integer.");
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Invalid input for old Court ID. Please enter a valid integer.");
+            //}
 
             ////////////////
 
             // Remove a court by CourtId
-            Console.WriteLine("Enter Court ID to remove:");
-            if (int.TryParse(Console.ReadLine(), out int courtIdToRemove))
-            {
-                admin.RemoveCourt(courtIdToRemove);
-            }
-            else
-            {
-                Console.WriteLine("Invalid input. Please enter a valid integer Court ID.");
-            }
+            //Console.WriteLine("Enter Court ID to remove:");
+            //if (int.TryParse(Console.ReadLine(), out int courtIdToRemove))
+            //{
+            //    admin.RemoveCourt(courtIdToRemove);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Invalid input. Please enter a valid integer Court ID.");
+            //}
 
-            bool exit = false;
-            while (!exit)
-            {
-                Console.Clear();
-                MainScreen.Weclome();
-                string userChosie = Console.ReadLine();
-                switch (userChosie)
-                {
-                    case "1":
-                        LoginScreen.LoginView();
-                        break;
-                    case "2":
-                        RegisterScreen.Register();
-                        break;
-                    case "0":
-                        exit = true;
-                        break;
-                }
-            }
 
+
+
+
+
+            //bool exit = false;
+            //while (!exit)
+            //{
+            //    Console.Clear();
+            //    MainScreen.Weclome();
+            //    string userChosie = Console.ReadLine();
+            //    switch (userChosie)
+            //    {
+            //        case "1":
+            //            LoginScreen.LoginView();
+            //            break;
+            //        case "2":
+            //            RegisterScreen.Register();
+            //            break;
+            //        case "0":
+            //            exit = true;
+            //            break;
+            //    }
+            //}
+
+            UpdateScreen.UpdateScreenView();
 
         }
         

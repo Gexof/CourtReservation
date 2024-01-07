@@ -6,7 +6,7 @@
   },
   {
     "CourtId": 103,
-    "Description": "a 9 v 9 football pitch  that has 80 yards (73.15m) x 50 yards (45.72m).",
+    "Description": "honk bonk juglie wigle",
     "Type": "Football"
   },
   {
@@ -47,6 +47,11 @@
   {
     "CourtId": 3,
     "Description": "Number one 1",
+    "Type": "Football"
+  },
+  {
+    "CourtId": 108,
+    "Description": "Test from Gexof",
     "Type": "Football"
   }
 ]
