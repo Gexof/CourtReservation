@@ -14,32 +14,43 @@ namespace CourtReservation.Models
 
         public DateOnly Date { set; get; }
 
-        public string CourtType { set; get; }
+        public Court court { set; get; }
 
-        public string UserName { set; get; }
+        public Customer customer { set; get; }
+
+        public List<Reservation> ResList { get; set; }
+        public TimeSpan StartTime { set; get; }
+        public TimeSpan EndTime { set; get; }
 
 
 
-
-
-        public Reservation(int ResrvationId, string UserName, string CourtType, DateOnly Date)
-            : base()
+        public Reservation(int ResrvationId, Court court, Customer customer, TimeSpan StartTime, TimeSpan EndTime, DateOnly Date)
         {
             this.ResrvationId = ResrvationId;
             this.Date = Date;
-            this.UserName = UserName;
-            this.CourtType = CourtType;
+            this.customer = customer;
+            this.court = court;
+            this.StartTime = StartTime;
+            this.EndTime = EndTime;
         }
-        public void Show_Reservation_Details()
+        public Reservation (DateOnly date,TimeSpan StartTime,TimeSpan EndTime)
         {
-            Console.WriteLine(ResrvationId);
-            Console.WriteLine(UserName);
-            Console.WriteLine(CourtType);
-            Console.WriteLine(Date);
         }
-        public void Cancel_Reservation()
+        public  static void ReservationProcess(DateOnly date, TimeSpan StartTime, TimeSpan EndTime, Court court,Customer customer)
         {
+            Reservation newreservation = new Reservation(date, StartTime, EndTime);
 
+            //Console.WriteLine("Add The Date");
+            //date = DateOnly.Parse(Console.ReadLine());
+            //Console.WriteLine($"Date: {date}");
+            //Console.WriteLine("Add The Start Time");
+            //StartTime = TimeSpan.Parse(Console.ReadLine());
+            //Console.WriteLine($"Start time: {StartTime}");
+            //Console.WriteLine("Add The End Time");
+            //EndTime = TimeSpan.Parse(Console.ReadLine());
+            //Console.WriteLine($"End time: {EndTime}");
         }
+
+
     }
     }

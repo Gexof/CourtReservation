@@ -98,12 +98,18 @@ namespace CourtReservation
             //            break;
             //    }
             //}
+            Court court = new Court(5,"zby", "Football");
+            Customer customer = new Customer(103,"Aliii");
+            DateOnly reservationDate = new DateOnly(2024, 5, 3);
+            TimeSpan startTime = new TimeSpan(10, 0, 0);
+            TimeSpan endTime = new TimeSpan(12, 0, 0);
+            Reservation.ReservationProcess(reservationDate, startTime, endTime, court, customer);
 
-            UpdateScreen.UpdateScreenView();
+            //UpdateScreen.UpdateScreenView();
 
         }
-        
-        
+
+
     }
 
 

@@ -1,0 +1,32 @@
+[
+  {
+    "ReservationId": 1,
+    "Date": "2024-01-07",
+    "StartTime": "10:00:00",
+    "EndTime": "12:00:00",
+    "Court": {
+      "CourtId": 102,
+      "Description": "fhdjsdjodaovdadanodankskcosda ",
+      "Type": "Football"
+    },
+    "Customer": {
+      "Id": 52,
+      "UserName": "Gexof"
+    }
+  },
+  {
+    "ReservationId": 2,
+    "Date": "2024-05-07",
+    "StartTime": "10:00:00",
+    "EndTime": "12:00:00",
+    "Court": {
+      "CourtId": 104,
+      "Description": "fhdjsdjodaovdadasdnodankskcosda ",
+      "Type": "Football"
+    },
+    "Customer": {
+      "Id": 10,
+      "UserName": "oops"
+    }
+  }
+]
