@@ -26,8 +26,15 @@ namespace CourtReservation.Models
         }
         public void MakeReservation(Reservation reservation)
         {
+            Reservations = reservation.LoadReservationData();
+
+            
+
+            reservation = new Reservation(reservation.ResrvationId, , );
 
             Reservations.Add(reservation);
+
+
         }
         //Parametarized Constructor
 
