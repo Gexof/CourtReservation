@@ -1,6 +1,6 @@
 [
   {
-    "ReservationId": 1,
+    "ResrvationId": 1,
     "Date": "2024-01-07",
     "StartTime": "10:00:00",
     "EndTime": "12:00:00",
@@ -15,7 +15,7 @@
     }
   },
   {
-    "ReservationId": 2,
+    "ResrvationId": 2,
     "Date": "2024-05-07",
     "StartTime": "10:00:00",
     "EndTime": "12:00:00",

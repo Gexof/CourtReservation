@@ -26,6 +26,7 @@ namespace CourtReservation.Models
         }
         public void MakeReservation(Reservation reservation)
         {
+
             Reservations.Add(reservation);
         }
         //Parametarized Constructor

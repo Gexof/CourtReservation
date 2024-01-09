@@ -98,22 +98,26 @@ namespace CourtReservation
             //            break;
             //    }
             //}
-            
 
-            Court court = new Court(5,"Sdv","football");
-            Customer customer = new Customer(3,"mohamed");
 
-            Reservation reservation = new Reservation(
-                 1,
-                court: court,
-                customer: customer,
-                 new DateOnly(2024, 1, 7)
-            );
-            reservation.ReserveTime(new TimeSpan(10, 0, 0),new TimeSpan(12, 0, 0));
-         //Customer customer = new Customer();
-            customer.MakeReservation(reservation);
-            customer.ViewReservations();
+            //   Court court = new Court(5,"Sdv","football");
+            //   Customer customer = new Customer(3,"mohamed");
+
+            //   Reservation reservation = new Reservation(
+            //        1,
+            //       court: court,
+            //       customer: customer,
+            //        new DateOnly(2024, 1, 7)
+            //   );
+            //   reservation.ReserveTime(new TimeSpan(10, 0, 0),new TimeSpan(12, 0, 0));
+            ////Customer customer = new Customer();
+            //   customer.MakeReservation(reservation);
+            //   customer.ViewReservations();
             //UpdateScreen.UpdateScreenView();
+
+
+            Reservation reservation = new();
+            reservation. LoadReservationData();
 
         }
 
