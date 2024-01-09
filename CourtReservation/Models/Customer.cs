@@ -10,21 +10,34 @@ namespace CourtReservation.Models
     internal class Customer : User
     {
         //Attribute
-        public string ReservedList { get; set; }
-
+        public List<Reservation> Reservations { get; set; }
         //Default Constructor
         public Customer()
         {
-            ReservedList = string.Empty;
+            Reservations = new List<Reservation>();
+
+        }
+        public Customer(int id, string userName, string password, string reservedList) :base (id,userName, password, "Customer") {
+            Reservations = new List<Reservation>();
         }
 
+        public Customer(int id, string userName) : base(id, userName,"","Customer") {
+            Reservations = new List<Reservation>();
+        }
+        public void MakeReservation(Reservation reservation)
+        {
+            Reservations.Add(reservation);
+        }
         //Parametarized Constructor
-        public Customer(int id, string userName, string password, string reservedList) :base (id,userName, password, "Customer") { }
 
-        public Customer(int id, string userName) : base(id, userName,"","Customer") { }
-        public void ShowReserved() { }
-
-        public void Reservation() { }
+        public void ViewReservations()
+        {
+            foreach (var reservation in Reservations)
+            {
+                reservation.DisplayReservationDetails();
+                Console.WriteLine();
+            }
+        }
 
 
     }

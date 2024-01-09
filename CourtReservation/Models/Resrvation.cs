@@ -17,40 +17,57 @@ namespace CourtReservation.Models
         public Court court { set; get; }
 
         public Customer customer { set; get; }
-
-        public List<Reservation> ResList { get; set; }
-        public TimeSpan StartTime { set; get; }
-        public TimeSpan EndTime { set; get; }
-
+        public List<TimeSlot> ReservedTimeSlots { get; set; } = new List<TimeSlot>();
+        //public TimeSpan StartTime { set; get; }
+        //public TimeSpan EndTime { set; get; }
 
 
-        public Reservation(int ResrvationId, Court court, Customer customer, TimeSpan StartTime, TimeSpan EndTime, DateOnly Date)
+
+        public Reservation(int ResrvationId, Court court, Customer customer, /*TimeSpan StartTime, TimeSpan EndTime,*/ DateOnly Date)
         {
             this.ResrvationId = ResrvationId;
             this.Date = Date;
             this.customer = customer;
             this.court = court;
-            this.StartTime = StartTime;
-            this.EndTime = EndTime;
+            //this.StartTime = StartTime;
+            //this.EndTime = EndTime;
         }
-        public Reservation (DateOnly date,TimeSpan StartTime,TimeSpan EndTime)
+        public bool IsTimeAvilable(TimeSlot NewRes)
         {
-        }
-        public  static void ReservationProcess(DateOnly date, TimeSpan StartTime, TimeSpan EndTime, Court court,Customer customer)
-        {
-            Reservation newreservation = new Reservation(date, StartTime, EndTime);
-
-            //Console.WriteLine("Add The Date");
-            //date = DateOnly.Parse(Console.ReadLine());
-            //Console.WriteLine($"Date: {date}");
-            //Console.WriteLine("Add The Start Time");
-            //StartTime = TimeSpan.Parse(Console.ReadLine());
-            //Console.WriteLine($"Start time: {StartTime}");
-            //Console.WriteLine("Add The End Time");
-            //EndTime = TimeSpan.Parse(Console.ReadLine());
-            //Console.WriteLine($"End time: {EndTime}");
+            foreach (var slot in ReservedTimeSlots)
+            {
+                if(NewRes.OverlapsWith(slot)) return false;
+            }
+            return true;
         }
 
+        public void ReserveTime (TimeSpan StartTime, TimeSpan EndTime)
+        {
+            TimeSlot NewRes = new TimeSlot(StartTime, EndTime);
+            if (IsTimeAvilable(NewRes))
+            {
+                ReservedTimeSlots.Add(NewRes);
+                Console.WriteLine("Reservation successful!");
+            }
+            else
+            {
+                Console.WriteLine("Time slot is already reserved. Please choose another time.");
+            }
+        }
+
+
+        public void DisplayReservationDetails()
+        {
+            Console.WriteLine($"Customer: {customer.UserName}");
+            Console.WriteLine($"Court: {court.CourtId} {court.Description} {court.Type}");
+            Console.WriteLine($"Reservation ID: {ResrvationId}");
+            Console.WriteLine($"Reservation Date: {Date.ToShortDateString()}");
+            Console.WriteLine("Reserved Time Slots:");
+            foreach (var timeSlot in ReservedTimeSlots)
+            {
+                Console.WriteLine($"- {timeSlot.StartTime} to {timeSlot.EndTime}");
+            }
+        }
 
     }
     }
