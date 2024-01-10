@@ -2,31 +2,73 @@
   {
     "ResrvationId": 1,
     "Date": "2024-01-07",
-    "StartTime": "10:00:00",
-    "EndTime": "12:00:00",
-    "Court": {
+    "court": {
       "CourtId": 102,
       "Description": "fhdjsdjodaovdadanodankskcosda ",
       "Type": "Football"
     },
-    "Customer": {
+    "customer": {
       "Id": 52,
-      "UserName": "Gexof"
-    }
+      "UserName": "Gexof",
+      "Password": null,
+      "UserType": null
+    },
+    "ReservedTimeSlots": [],
+    "StartTime": "10:00:00",
+    "EndTime": "12:00:00"
   },
   {
-    "ResrvationId": 2,
-    "Date": "2024-05-07",
-    "StartTime": "10:00:00",
-    "EndTime": "12:00:00",
-    "Court": {
-      "CourtId": 104,
-      "Description": "fhdjsdjodaovdadasdnodankskcosda ",
-      "Type": "Football"
+    "ResrvationId": -192958059,
+    "Date": "2024-01-07",
+    "court": {
+      "CourtId": 5,
+      "Description": "Sdv",
+      "Type": "football"
     },
-    "Customer": {
-      "Id": 10,
-      "UserName": "oops"
-    }
+    "customer": {
+      "Id": 3,
+      "UserName": "mohamed",
+      "Password": "",
+      "UserType": "Customer"
+    },
+    "ReservedTimeSlots": [],
+    "StartTime": "16:00:00",
+    "EndTime": "18:00:00"
+  },
+  {
+    "ResrvationId": -192768500,
+    "Date": "2024-01-07",
+    "court": {
+      "CourtId": 5,
+      "Description": "Sdv",
+      "Type": "football"
+    },
+    "customer": {
+      "Id": 3,
+      "UserName": "mohamed",
+      "Password": "",
+      "UserType": "Customer"
+    },
+    "ReservedTimeSlots": [],
+    "StartTime": "16:00:00",
+    "EndTime": "18:00:00"
+  },
+  {
+    "ResrvationId": -192722856,
+    "Date": "2024-01-07",
+    "court": {
+      "CourtId": 5,
+      "Description": "Sdv",
+      "Type": "football"
+    },
+    "customer": {
+      "Id": 78,
+      "UserName": "mohamed",
+      "Password": "",
+      "UserType": "Customer"
+    },
+    "ReservedTimeSlots": [],
+    "StartTime": "16:00:00",
+    "EndTime": "18:00:00"
   }
 ]
