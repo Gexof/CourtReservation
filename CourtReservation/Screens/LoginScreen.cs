@@ -29,7 +29,9 @@ namespace CourtReservation.Screens
                     string username = Console.ReadLine();
                     Console.Write("\nPassowrd: ");
                     string password = Console.ReadLine();
-                    customer.login(username,password);
+                    bool isLogin = customer.login(username,password);
+                    Console.WriteLine(isLogin);
+                    Console.ReadKey();
                     break;
                 case "2":
                     Admin admin = new();
@@ -39,7 +41,7 @@ namespace CourtReservation.Screens
                     Console.Write("\nPassowrd: ");
                     password = Console.ReadLine();
                     admin.login(username, password);
-                    Console.Clear() ;
+                    Console.Clear();
                     DashbordAdminScreen.DashbordAdminView();
                     break;
                 default:

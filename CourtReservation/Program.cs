@@ -79,50 +79,28 @@ namespace CourtReservation
 
 
 
-            //bool exit = false;
-            //while (!exit)
-            //{
-            //    Console.Clear();
-            //    MainScreen.Weclome();
-            //    string userChosie = Console.ReadLine();
-            //    switch (userChosie)
-            //    {
-            //        case "1":
-            //            LoginScreen.LoginView();
-            //            break;
-            //        case "2":
-            //            RegisterScreen.Register();
-            //            break;
-            //        case "0":
-            //            exit = true;
-            //            break;
-            //    }
-            //}
+            bool exit = false;
+            while (!exit)
+            {
+                Console.Clear();
+                MainScreen.Weclome();
+                string userChosie = Console.ReadLine();
+                switch (userChosie)
+                {
+                    case "1":
+                        LoginScreen.LoginView();
+                        break;
+                    case "2":
+                        RegisterScreen.Register();
+                        break;
+                    case "0":
+                        exit = true;
+                        break;
+                }
+            }
 
 
-            Court court = new Court(5, "Sdv", "football");
-            Customer customer = new Customer(78, "mohamed");
 
-            Reservation reservation = new Reservation(
-                1,
-                court: court,
-                customer: customer,
-                StartTime: new TimeSpan(16, 0, 0),
-                EndTime: new TimeSpan(18, 0, 0),
-                Date: DateOnly.FromDateTime(new DateTime(2024, 1, 7))
-            );
-
-            customer.MakeReservation(reservation);
-
-            //reservation.ReserveTime(new TimeSpan(10, 0, 0), new TimeSpan(12, 0, 0));
-            ////Customer customer = new Customer();
-            ////customer.MakeReservation(reservation);
-            //customer.ViewReservations();
-            ////UpdateScreen.UpdateScreenView();
-
-
-            ////Reservation reservation = new();
-            //reservation. LoadReservationData();
 
 
         }

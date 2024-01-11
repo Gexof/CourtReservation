@@ -17,7 +17,7 @@ namespace CourtReservation.Screens
 
 
             Console.WriteLine("=================== Welcome To Court Reservation =================== \n");
-            Console.WriteLine("[1] Load Users");
+            Console.WriteLine("[1] Zobr");
 
             string UserChoice = Console.ReadLine();
 

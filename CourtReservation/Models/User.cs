@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using CourtReservation.Screens;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace CourtReservation.Models
     internal class User /*: AuthService*/
     {
 
-        private const string FileName = "C:\\Users\\thepe\\source\\repos\\CourtReservation";
+        private const string FileName = "C:\\Users\\Mohamed Ashraf\\source\\repos\\CourtReservation\\CourtReservation\\Data\\Users.json";
 
         //Attribute
         public int Id { get; set; }
@@ -50,18 +51,6 @@ namespace CourtReservation.Models
             {
                 string jsonText = File.ReadAllText(FileName);
                 List<User> loadedUsers = JsonConvert.DeserializeObject<List<User>>(jsonText);
-
-                foreach (var user in loadedUsers)
-                {
-                    Console.WriteLine($"ID: {user.Id}, Username: {user.UserName}, Type: {user.UserType}");
-                }
-
-                //foreach (var user in loadedUsers)
-                //{
-                //    Console.WriteLine($"Username: {user.UserName}, Password: {user.Password}");
-                //}
-
-
                 return loadedUsers;
             }
             Console.WriteLine("No user data found.");
@@ -77,26 +66,47 @@ namespace CourtReservation.Models
             File.WriteAllText(FileName, updateJson); // Write All Text Files to Json File 
         }
 
-        public void login(string userName, string password)
+        //public void login(string userName, string password)
+        //{
+        //    List<User> users = LoadUsers();
+
+        //    for (int i = 0; i < 3; i++)
+        //    {
+        //        foreach (var user in users)
+        //        {
+        //            if (user.UserName == userName && user.Password == password)
+        //            {
+        //                Console.WriteLine("Login successful");
+        //                return; // Login successful, exit the method
+        //            }
+        //        }
+        //        // If no matching user is found
+        //        Console.WriteLine("Sorry, try again");
+        //    }
+        //    Console.WriteLine("Sorry, You can't login again");
+        //}
+
+
+        public bool login(string userName, string password)
         {
             List<User> users = LoadUsers();
 
-            for (int i = 0; i < 3; i++)
+            for (int attempt = 0; attempt < 3; attempt++)
             {
+
                 foreach (var user in users)
                 {
-                    if (user.UserName == userName && user.Password == password)
-                    {
-                        Console.WriteLine("Login successful");
-                        return; // Login successful, exit the method
-                    }
+                    if (user.UserName == userName && user.Password == password) return true;
+                    else continue;
                 }
-                // If no matching user is found
-                Console.WriteLine("Sorry, try again");
+                Console.WriteLine("Sorry, Try again");
             }
-            Console.WriteLine("Sorry, You can't login again");
-
+            Console.WriteLine("Sorry, you can't login again");
+            return false;
         }
+
+
+
     }
 }
 

@@ -10,7 +10,7 @@ namespace CourtReservation.Models
     internal class Reservation /*: User, Court*/
     {
 
-        private const string ResPath = "C:\\Users\\Mohamed Alaa\\source\\repos\\CourtReservation\\CourtReservation\\Data\\Reservation.json";
+        private const string ResPath = "C:\\Users\\Mohamed Ashraf\\source\\repos\\CourtReservation\\CourtReservation\\Data\\Reservation.json";
         public int ResrvationId { set; get; }
 
         public DateOnly Date { set; get; }
@@ -80,29 +80,29 @@ namespace CourtReservation.Models
                 string jsonText = File.ReadAllText(ResPath);
                 List<Reservation> reservations = JsonConvert.DeserializeObject<List<Reservation>>(jsonText);
 
-                foreach (var reservation in reservations)
-                {
-                    Console.WriteLine($"Reservation ID: {reservation.ResrvationId}");
-                    Console.WriteLine($"Date: {reservation.Date}");
-                    Console.WriteLine($"Time: {reservation.StartTime} - {reservation.EndTime}");
+                //foreach (var reservation in reservations)
+                //{
+                //    Console.WriteLine($"Reservation ID: {reservation.ResrvationId}");
+                //    Console.WriteLine($"Date: {reservation.Date}");
+                //    Console.WriteLine($"Time: {reservation.StartTime} - {reservation.EndTime}");
 
-                    // Display court details
-                    if (reservation.court != null)
-                    {
-                        Console.WriteLine($"Court ID: {reservation.court.CourtId}");
-                        Console.WriteLine($"Court Description: {reservation.court.Description}");
-                        Console.WriteLine($"Court Type: {reservation.court.Type}");
-                    }
+                //    // Display court details
+                //    if (reservation.court != null)
+                //    {
+                //        Console.WriteLine($"Court ID: {reservation.court.CourtId}");
+                //        Console.WriteLine($"Court Description: {reservation.court.Description}");
+                //        Console.WriteLine($"Court Type: {reservation.court.Type}");
+                //    }
 
-                    // Display customer details
-                    if (reservation.customer != null)
-                    {
-                        Console.WriteLine($"Customer ID: {reservation.customer.Id}");
-                        Console.WriteLine($"Customer UserName: {reservation.customer.UserName}");
-                    }
+                //    // Display customer details
+                //    if (reservation.customer != null)
+                //    {
+                //        Console.WriteLine($"Customer ID: {reservation.customer.Id}");
+                //        Console.WriteLine($"Customer UserName: {reservation.customer.UserName}");
+                //    }
 
-                    Console.WriteLine(); // Add a line break between reservations
-                }
+                //    Console.WriteLine(); // Add a line break between reservations
+                //}
 
 
                 return reservations;
@@ -111,8 +111,6 @@ namespace CourtReservation.Models
             Console.WriteLine("No reservation data found.");
             return new List<Reservation>();
         }
-
-        
 
 
         public void DisplayReservationDetails()
@@ -127,6 +125,8 @@ namespace CourtReservation.Models
                 Console.WriteLine($"- {timeSlot.StartTime} to {timeSlot.EndTime}");
             }
         }
+
+
 
     }
     }
