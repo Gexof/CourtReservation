@@ -10,7 +10,7 @@ namespace CourtReservation.Models
 {
     internal class Admin : User
     {
-        private const string CourtPath = "C:\\Users\\Mohamed Ashraf\\source\\repos\\CourtReservation\\CourtReservation\\Data\\Court.json";
+        private const string CourtPath = "C:\\Users\\Mohamed Alaa\\Source\\Repos\\CourtReservation\\CourtReservation\\Data\\Court.json";
         private List<Court> courts;
 
         public Admin()

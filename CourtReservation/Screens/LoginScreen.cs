@@ -48,20 +48,28 @@ namespace CourtReservation.Screens
 
                     DashbordCustomerScreen.DashbordCustomerView();
                     break;
+
                 case "2":
                     Admin admin = new();
-                    Console.Clear();
                     Console.Write("Username: ");
                     username = Console.ReadLine();
-                    Console.Write("\nPassowrd: ");
+                    Console.Write("\nPassword: ");
                     password = Console.ReadLine();
-                    isLogin = admin.login(username, password);
-                    if (isLogin)
+
+                    while (!isLogin)
                     {
-                        Console.Clear();
-                        DashbordAdminScreen.DashbordAdminView();
-                    } 
-                    
+                        isLogin = admin.login(username, password);
+
+                        if (!isLogin)
+                        {
+                            Console.Write("Username: ");
+                            username = Console.ReadLine();
+                            Console.Write("\nPassword: ");
+                            password = Console.ReadLine();
+                        }
+                    }
+
+                    DashbordAdminScreen.DashbordAdminView();
                     break;
                 default:
                     Console.WriteLine("Wrong Option");

@@ -11,7 +11,7 @@ namespace CourtReservation.Models
         // Attribute
         //[JsonIgnore]
  
-        string Resname = @"C:\Users\Mohamed Ashraf\source\repos\CourtReservation\CourtReservation\Data\Reservation.json";
+        string Resname = "C:/Users/Mohamed Alaa/Source/Repos/CourtReservation/CourtReservation/Data/Reservation.json";
 
         // Default Constructor
         public Customer()
