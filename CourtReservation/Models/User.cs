@@ -91,17 +91,24 @@ namespace CourtReservation.Models
         {
             List<User> users = LoadUsers();
 
-            for (int attempt = 0; attempt < 3; attempt++)
-            {
+            //for (int attempt = 0; attempt < 3; attempt++)
+            //{
 
-                foreach (var user in users)
-                {
-                    if (user.UserName == userName && user.Password == password) return true;
-                    else continue;
-                }
-                Console.WriteLine("Sorry, Try again");
+            //    foreach (var user in users)
+            //    {
+            //        if (user.UserName == userName && user.Password == password) return true;
+            //        else continue;
+            //    }
+            //    Console.WriteLine("Sorry, Try again");
+            //}
+
+            foreach (var user in users)
+            {
+                if (user.UserName == userName && user.Password == password) return true;
+                else continue;
             }
-            Console.WriteLine("Sorry, you can't login again");
+            Console.WriteLine("Sorry, Try again.. Press Enter To Continue");
+            Console.ReadKey();
             return false;
         }
 

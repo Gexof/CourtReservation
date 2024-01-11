@@ -20,18 +20,33 @@ namespace CourtReservation.Screens
             User user = new();
 
             string UserChoice = Console.ReadLine();
+            bool isLogin = false;
+            string username;
+            string password;
 
             switch (UserChoice)
             {
                 case "1":
                     Customer customer = new();
                     Console.Write("Username: ");
-                    string username = Console.ReadLine();
-                    Console.Write("\nPassowrd: ");
-                    string password = Console.ReadLine();
-                    bool isLogin = customer.login(username,password);
-                    Console.WriteLine(isLogin);
-                    Console.ReadKey();
+                    username = Console.ReadLine();
+                    Console.Write("\nPassword: ");
+                    password = Console.ReadLine();
+
+                    while (!isLogin)
+                    {
+                        isLogin = customer.login(username, password);
+
+                        if (!isLogin)
+                        {
+                            Console.Write("Username: ");
+                            username = Console.ReadLine();
+                            Console.Write("\nPassword: ");
+                            password = Console.ReadLine();
+                        }
+                    }
+
+                    DashbordCustomerScreen.DashbordCustomerView();
                     break;
                 case "2":
                     Admin admin = new();
@@ -40,9 +55,13 @@ namespace CourtReservation.Screens
                     username = Console.ReadLine();
                     Console.Write("\nPassowrd: ");
                     password = Console.ReadLine();
-                    admin.login(username, password);
-                    Console.Clear();
-                    DashbordAdminScreen.DashbordAdminView();
+                    isLogin = admin.login(username, password);
+                    if (isLogin)
+                    {
+                        Console.Clear();
+                        DashbordAdminScreen.DashbordAdminView();
+                    } 
+                    
                     break;
                 default:
                     Console.WriteLine("Wrong Option");
