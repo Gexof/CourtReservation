@@ -30,12 +30,6 @@ namespace CourtReservation.Models
             {
                 string jsonText = File.ReadAllText(CourtPath);
                 List<Court> ShowCourt = JsonConvert.DeserializeObject<List<Court>>(jsonText);
-
-                //foreach (var court in ShowCourt)
-                //{
-                //    Console.WriteLine($"CourtID: {court.CourtId}, Description: {court.Description}, Type: {court.Type}");
-                //}
-
                 return ShowCourt;
             }
             Console.WriteLine("No user data found.");
@@ -134,10 +128,9 @@ namespace CourtReservation.Models
 
 
 
-        //Remove a court by ID
         public void RemoveCourt(int courtId)
         {
-            List<Court> existingCourts = ShowCourt(); // Get the list of courts
+            List<Court> existingCourts = ShowCourt(); 
 
             Court courtToRemove = existingCourts.Find(Court => Court.CourtId == courtId); 
 
@@ -145,7 +138,6 @@ namespace CourtReservation.Models
             {
                 existingCourts.Remove(courtToRemove);
 
-                // Save the updated list back to the file
                 string updatedJson = JsonConvert.SerializeObject(existingCourts, Formatting.Indented);
                 File.WriteAllText(CourtPath, updatedJson);
 
@@ -157,14 +149,6 @@ namespace CourtReservation.Models
             }
         }
 
-
-        // Method to accept a court (just as an example)
-        //public void AcceptRes()
-        //{
-        //  Console.WriteLine("Court accepted");
-        // Additional logic for accepting a court can be added here
-
-        //}
 
     }
 
