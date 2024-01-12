@@ -10,7 +10,7 @@ namespace CourtReservation.Models
     internal class Reservation /*: User, Court*/
     {
 
-        private const string ResPath = "C:\\Users\\Mohamed Ashraf\\source\\repos\\CourtReservation\\CourtReservation\\Data\\Reservation.json";
+        private const string ResPath = "C:\\Users\\Mohamed Alaa\\source\\repos\\CourtReservation\\CourtReservation\\Data\\Reservation.json";
         public int ResrvationId { set; get; }
 
         public DateOnly Date { set; get; }
@@ -31,9 +31,9 @@ namespace CourtReservation.Models
 
 
 
-        public Reservation(int ResrvationId, Court court, Customer customer, TimeSpan StartTime, TimeSpan EndTime, DateOnly Date)
+        public Reservation( Court court, Customer customer, TimeSpan StartTime, TimeSpan EndTime, DateOnly Date)
         {
-            this.ResrvationId = ResrvationId;
+            //this.ResrvationId = ResrvationId;
             this.Date = Date;
             this.customer = customer;
             this.court = court;

@@ -77,8 +77,6 @@ namespace CourtReservation
 
 
 
-
-
             bool exit = false;
             while (!exit)
             {

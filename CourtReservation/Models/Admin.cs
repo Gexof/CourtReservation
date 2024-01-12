@@ -31,10 +31,10 @@ namespace CourtReservation.Models
                 string jsonText = File.ReadAllText(CourtPath);
                 List<Court> ShowCourt = JsonConvert.DeserializeObject<List<Court>>(jsonText);
 
-                foreach (var court in ShowCourt)
-                {
-                    Console.WriteLine($"CourtID: {court.CourtId}, Description: {court.Description}, Type: {court.Type}");
-                }
+                //foreach (var court in ShowCourt)
+                //{
+                //    Console.WriteLine($"CourtID: {court.CourtId}, Description: {court.Description}, Type: {court.Type}");
+                //}
 
                 return ShowCourt;
             }

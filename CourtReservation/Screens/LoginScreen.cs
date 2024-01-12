@@ -27,7 +27,7 @@ namespace CourtReservation.Screens
             switch (UserChoice)
             {
                 case "1":
-                    Customer customer = new();
+                    Customer customerLog = new();
                     Console.Write("Username: ");
                     username = Console.ReadLine();
                     Console.Write("\nPassword: ");
@@ -35,7 +35,7 @@ namespace CourtReservation.Screens
 
                     while (!isLogin)
                     {
-                        isLogin = customer.login(username, password);
+                        isLogin = customerLog.login(username, password);
 
                         if (!isLogin)
                         {
@@ -46,7 +46,7 @@ namespace CourtReservation.Screens
                         }
                     }
 
-                    DashbordCustomerScreen.DashbordCustomerView();
+                    DashbordCustomerScreen.DashbordCustomerView(username);
                     break;
 
                 case "2":
