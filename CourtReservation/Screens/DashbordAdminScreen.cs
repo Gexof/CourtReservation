@@ -30,10 +30,10 @@ namespace CourtReservation.Screens
                     List<Court> courts = adimn.ShowCourt();
                     foreach (var item in courts)
                     {
-                        Console.WriteLine(item.CourtId);
-                        Console.WriteLine(item.Description);
-                        Console.WriteLine(item.Type);
-                        Console.WriteLine("**********************");
+                        Console.WriteLine($"Court ID: {item.CourtId}");
+                        Console.WriteLine($"Court Description: {item.Description} ");
+                        Console.WriteLine($"Court Type: { item.Type}");
+                        Console.WriteLine("________________________________________");
                     }
                     Console.ReadKey();
                     break;
@@ -46,6 +46,7 @@ namespace CourtReservation.Screens
                     Console.WriteLine("Enter the Court Type");
                     string type= Console.ReadLine();
                     adimn.AddCourt(Id, desc, type);
+                    Console.WriteLine("Opertation Successfull");
                     Console.ReadKey();
                     break;
 

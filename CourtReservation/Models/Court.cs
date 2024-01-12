@@ -1,9 +1,8 @@
 ﻿using System;
 
-public  class Court /*: AuthService*/
+public  class Court 
 {
 
-    //Attribute
     public int CourtId { get; set; }
 
     public string Description { get; set; }
@@ -21,7 +20,6 @@ public  class Court /*: AuthService*/
         this.Description = Description ;
         this.Type = Type ;
     }
-    //public abstract string ShowCollection(string collection);
 
     public Court(int CourtId)
     {

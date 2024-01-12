@@ -7,7 +7,7 @@ using System;
 
 namespace CourtReservation.Models
 {
-    internal class Reservation /*: User, Court*/
+    internal class Reservation 
     {
 
         private const string ResPath = "C:\\Users\\Mohamed Alaa\\source\\repos\\CourtReservation\\CourtReservation\\Data\\Reservation.json";
@@ -80,29 +80,6 @@ namespace CourtReservation.Models
                 string jsonText = File.ReadAllText(ResPath);
                 List<Reservation> reservations = JsonConvert.DeserializeObject<List<Reservation>>(jsonText);
 
-                //foreach (var reservation in reservations)
-                //{
-                //    Console.WriteLine($"Reservation ID: {reservation.ResrvationId}");
-                //    Console.WriteLine($"Date: {reservation.Date}");
-                //    Console.WriteLine($"Time: {reservation.StartTime} - {reservation.EndTime}");
-
-                //    // Display court details
-                //    if (reservation.court != null)
-                //    {
-                //        Console.WriteLine($"Court ID: {reservation.court.CourtId}");
-                //        Console.WriteLine($"Court Description: {reservation.court.Description}");
-                //        Console.WriteLine($"Court Type: {reservation.court.Type}");
-                //    }
-
-                //    // Display customer details
-                //    if (reservation.customer != null)
-                //    {
-                //        Console.WriteLine($"Customer ID: {reservation.customer.Id}");
-                //        Console.WriteLine($"Customer UserName: {reservation.customer.UserName}");
-                //    }
-
-                //    Console.WriteLine(); // Add a line break between reservations
-                //}
 
 
                 return reservations;

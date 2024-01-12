@@ -1,5 +1,4 @@
-﻿using CourtReservation.Models.Interfaces;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +21,6 @@ namespace CourtReservation.Models
         public Admin(int id, string userName, string password) : base(id, userName, password, "admin") { }
 
 
-        //Show all courts
         public List<Court> ShowCourt()
         {
 
@@ -60,7 +58,6 @@ namespace CourtReservation.Models
         }
 
 
-        // Update a court's ID
         public void UpdateId(int NewId, Court CourtToUpdate)
         {
             CourtToUpdate.CourtId = NewId;
@@ -112,8 +109,6 @@ namespace CourtReservation.Models
                     // Serialize the updated data and write it back to the JSON file
                     string updatedJson = JsonConvert.SerializeObject(courts, Formatting.Indented);
                     File.WriteAllText(CourtPath, updatedJson);
-
-                    //Console.WriteLine($"Updated Court ID from '{oldCourtId}' to '{newCourtId}' in Court.json");
                 }
                 else
                 {

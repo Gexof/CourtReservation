@@ -1,5 +1,4 @@
-﻿using CourtReservation.Models.Interfaces;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,21 +7,17 @@ namespace CourtReservation.Models
 {
     internal class Customer : User
     {
-        // Attribute
-        //[JsonIgnore]
+
  
         string Resname = "C:/Users/Mohamed Alaa/Source/Repos/CourtReservation/CourtReservation/Data/Reservation.json";
 
-        // Default Constructor
         public Customer()
         {
-            //ReservationsList = new List<Reservation>();
         }
 
         //Parameterized Constructor
         public Customer(int id, string userName) : base(id, userName, "", "Customer")
         {
-            //Re/*servationsList = new List<Reservation>();*/
         }
 
         // Make a reservation
@@ -55,10 +50,8 @@ namespace CourtReservation.Models
 
         private int GenerateUniqueReservationId()
         {
-            // Get the current timestamp in milliseconds
             long timestamp = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
 
-            // Convert the timestamp to an integer (you can adjust this based on your requirements)
             int uniqueId = (int)timestamp;
 
             return uniqueId;
@@ -68,7 +61,7 @@ namespace CourtReservation.Models
         public void ViewReservations()
         {
             Reservation reservation = new Reservation();
-            int userId = 50000; // Replace with the actual user ID
+            int userId = 50000; 
 
             List<Reservation> reservations = reservation.LoadReservationData();
 

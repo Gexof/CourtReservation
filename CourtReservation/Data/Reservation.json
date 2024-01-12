@@ -107,24 +107,7 @@
     "StartTime": "16:00:00",
     "EndTime": "18:00:00"
   },
-  {
-    "ResrvationId": -79286442,
-    "Date": "2024-01-09",
-    "court": {
-      "CourtId": 9,
-      "Description": "3la ra2y el swaisy msh btt7asb keda ya sa7by ",
-      "Type": "Paddel"
-    },
-    "customer": {
-      "Id": 0,
-      "UserName": null,
-      "Password": null,
-      "UserType": null
-    },
-    "ReservedTimeSlots": [],
-    "StartTime": "5.00:00:00",
-    "EndTime": "7.00:00:00"
-  },
+  
   {
     "ResrvationId": -77628329,
     "Date": "2024-11-11",
