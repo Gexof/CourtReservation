@@ -7,21 +7,17 @@ namespace CourtReservation.Models
 {
     internal class Customer : User
     {
-        // Attribute
-        //[JsonIgnore]
+
  
         string Resname = "C:\\Users\\Mohamed Ashraf\\Source\\Repos\\CourtReservation\\CourtReservation\\Data\\Reservation.json";
 
-        // Default Constructor
         public Customer()
         {
-            //ReservationsList = new List<Reservation>();
         }
 
         //Parameterized Constructor
         public Customer(int id, string userName) : base(id, userName, "", "customer")
         {
-            //Re/*servationsList = new List<Reservation>();*/
         }
 
         public Customer(string userName, string password) : base(userName, password, "customer") { }
@@ -57,10 +53,8 @@ namespace CourtReservation.Models
 
         private int GenerateUniqueReservationId()
         {
-            // Get the current timestamp in milliseconds
             long timestamp = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
 
-            // Convert the timestamp to an integer (you can adjust this based on your requirements)
             int uniqueId = (int)timestamp;
 
             return uniqueId;
@@ -70,7 +64,7 @@ namespace CourtReservation.Models
         public void ViewReservations()
         {
             Reservation reservation = new Reservation();
-            int userId = 50000; // Replace with the actual user ID
+            int userId = 50000; 
 
             List<Reservation> reservations = reservation.LoadReservationData();
 

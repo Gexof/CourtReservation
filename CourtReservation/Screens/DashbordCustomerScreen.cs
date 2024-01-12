@@ -32,7 +32,7 @@ namespace CourtReservation.Screens
                     switch (CourtType)
                     {
                         case "1":
-                            ReserveFootball();
+                            ReserveFootball(username);
                             break;
                             case "2":
                             ReservePaddel(username); break;
@@ -68,7 +68,7 @@ namespace CourtReservation.Screens
                 }
             }
         }
-        static void ReserveFootball()
+        static void ReserveFootball(string username)
         {
             Admin admin = new Admin();
             List<Court> Courtlist = admin.ShowCourt();
@@ -92,9 +92,44 @@ namespace CourtReservation.Screens
                 Console.WriteLine("No Paddel court available.");
             }
 
-            Reservation res = new Reservation();
+            Console.WriteLine("Add a Court ID ");
+            int id = int.Parse(Console.ReadLine());
+            Court court0 = new Court();
+            foreach (var item in Courtlist)
+            {
+                if (item.CourtId == id)
+                {
+                    court0 = new Court(item.CourtId, item.Description, item.Type);
+                }
+            }
+            Customer customer = new Customer();
+            User user = new User();
+            List<User> users = user.LoadUsers();
+            foreach (var usser in users)
+            {
+
+                if (usser.UserName == username)
+                {
+                    customer = new Customer(usser.Id, usser.UserName);
+                }
+            }
+            Console.WriteLine("Add Date");
+            DateOnly date = DateOnly.Parse(Console.ReadLine());
+            Console.WriteLine("Add start Time");
+
+
+            TimeSpan startTime = TimeSpan.Parse(Console.ReadLine());
+            Console.WriteLine("Add End Time");
+            TimeSpan EndTime = TimeSpan.Parse(Console.ReadLine());
+
+            Reservation NewRes = new Reservation(court0, customer, startTime, EndTime, date);
+            customer.MakeReservation(NewRes);
 
         }
+
+        
+
+
         static void ReservePaddel(string username)
 
         {

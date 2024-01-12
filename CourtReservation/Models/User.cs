@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace CourtReservation.Models
 {
-    internal class User /*: AuthService*/
+    internal class User 
     {
 
         private const string FileName = "C:\\Users\\Mohamed Ashraf\\Source\\Repos\\CourtReservation\\CourtReservation\\Data\\Users.json";
 
-        //Attribute
+       
         public int Id { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
