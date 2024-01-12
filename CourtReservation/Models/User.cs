@@ -11,7 +11,7 @@ namespace CourtReservation.Models
     internal class User /*: AuthService*/
     {
 
-        private const string FileName = "C:\\Users\\Mohamed Alaa\\Source\\Repos\\CourtReservation\\CourtReservation\\Data\\Users.json";
+        private const string FileName = "C:\\Users\\Mohamed Ashraf\\Source\\Repos\\CourtReservation\\CourtReservation\\Data\\Users.json";
 
         //Attribute
         public int Id { get; set; }
@@ -33,7 +33,6 @@ namespace CourtReservation.Models
         {
 
         }
-        //Parametarized Constructor
         public User(int id,string userName, string password, string userType)
         {
             Id = id;
@@ -57,34 +56,17 @@ namespace CourtReservation.Models
             return new List<User>();
         }
 
-        public void RegisterUser(int id, string username, string password, string type)
+
+        public void RegisterUser(int id,string username, string password, string type)
         {
-            User newuser = new(id, username, password, type);
-            List<User> users = LoadUsers(); // Loading The List os user from Json File
-            users.Add(newuser); // Add New user To the users List That Retrived from Json file
-            string updateJson = JsonConvert.SerializeObject(users, Formatting.Indented); // Covert From List To Json Format
+            List<User> users = LoadUsers(); // Loading The List of users from Json File
+            User newuser = new(id,username, password, type);
+            users.Add(newuser); // Add New user To the users List That Retrieved from Json file
+            string updateJson = JsonConvert.SerializeObject(users, Formatting.Indented); // Convert From List To Json Format
             File.WriteAllText(FileName, updateJson); // Write All Text Files to Json File 
         }
 
-        //public void login(string userName, string password)
-        //{
-        //    List<User> users = LoadUsers();
 
-        //    for (int i = 0; i < 3; i++)
-        //    {
-        //        foreach (var user in users)
-        //        {
-        //            if (user.UserName == userName && user.Password == password)
-        //            {
-        //                Console.WriteLine("Login successful");
-        //                return; // Login successful, exit the method
-        //            }
-        //        }
-        //        // If no matching user is found
-        //        Console.WriteLine("Sorry, try again");
-        //    }
-        //    Console.WriteLine("Sorry, You can't login again");
-        //}
 
 
         public bool login(string userName, string password)

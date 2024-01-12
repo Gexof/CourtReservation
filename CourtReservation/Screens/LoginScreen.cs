@@ -12,6 +12,7 @@ namespace CourtReservation.Screens
 
 
         public static void LoginView() {
+            Console.Clear();
             Console.WriteLine("=================== Login =================== \n");
             Console.WriteLine("Please Select Account Type:");
             Console.WriteLine("[1] Customer");

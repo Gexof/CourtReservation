@@ -1,5 +1,4 @@
-﻿using CourtReservation.Models.Interfaces;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,7 +10,7 @@ namespace CourtReservation.Models
         // Attribute
         //[JsonIgnore]
  
-        string Resname = "C:/Users/Mohamed Alaa/Source/Repos/CourtReservation/CourtReservation/Data/Reservation.json";
+        string Resname = "C:\\Users\\Mohamed Ashraf\\Source\\Repos\\CourtReservation\\CourtReservation\\Data\\Reservation.json";
 
         // Default Constructor
         public Customer()
@@ -20,26 +19,29 @@ namespace CourtReservation.Models
         }
 
         //Parameterized Constructor
-        public Customer(int id, string userName) : base(id, userName, "", "Customer")
+        public Customer(int id, string userName) : base(id, userName, "", "customer")
         {
             //Re/*servationsList = new List<Reservation>();*/
         }
+
+        public Customer(string userName, string password) : base(userName, password, "customer") { }
+
 
         // Make a reservation
         public void MakeReservation(Reservation reservation)
         {
 
             List<Reservation> ReservationsList;
-        // Loading existing reservations (optional, depending on your requirements)
+        // Loading existing reservations 
             ReservationsList = reservation.LoadReservationData();
 
             // Creating a new reservation
             Reservation newReservation = new Reservation
             {
-                ResrvationId = GenerateUniqueReservationId(), // Use the method to generate a unique ID
-                Date = reservation.Date, // Set the date to the current date, adjust as needed
-                court = reservation.court, // Initialize court with an instance of the Court class (adjust as needed)
-                customer = reservation.customer, // Initialize customer with an instance of the Customer class (adjust as needed)
+                ResrvationId = GenerateUniqueReservationId(),
+                Date = reservation.Date, 
+                court = reservation.court, 
+                customer = reservation.customer, 
                 StartTime = reservation.StartTime,
                 EndTime = reservation.EndTime
             };
