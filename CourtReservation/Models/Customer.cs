@@ -28,10 +28,8 @@ namespace CourtReservation.Models
         {
 
             List<Reservation> ReservationsList;
-        // Loading existing reservations 
             ReservationsList = reservation.LoadReservationData();
 
-            // Creating a new reservation
             Reservation newReservation = new Reservation
             {
                 ResrvationId = GenerateUniqueReservationId(),
@@ -42,10 +40,8 @@ namespace CourtReservation.Models
                 EndTime = reservation.EndTime
             };
 
-            // Adding the new reservation to the list
             ReservationsList.Add(newReservation);
 
-            // Serializing and writing the updated list to the file
             string updateJson = JsonConvert.SerializeObject(ReservationsList, Formatting.Indented);
             File.WriteAllText(Resname, updateJson);
         }
@@ -61,37 +57,37 @@ namespace CourtReservation.Models
         }
 
         // View reservations
-        public void ViewReservations()
-        {
-            Reservation reservation = new Reservation();
-            int userId = 50000; 
+        //public void ViewReservations()
+        //{
+        //    Reservation reservation = new Reservation();
+        //    int userId = 5; 
 
-            List<Reservation> reservations = reservation.LoadReservationData();
+        //    List<Reservation> reservations = reservation.LoadReservationData();
 
-            bool reservationsFound = false;
+        //    bool reservationsFound = false;
 
-            foreach (var item in reservations)
-            {
-                if (userId == item.customer.Id)
-                {
-                    Console.WriteLine($"Reservation ID: {item.ResrvationId}");
-                    Console.WriteLine($"Date: {item.Date.ToShortDateString()}");
-                    Console.WriteLine($"Court: {item.court.CourtId} {item.court.Description} {item.court.Type}");
-                    Console.WriteLine($"Customer: {item.customer.UserName}");
-                    Console.WriteLine($"Reserved Time Slots: {item.StartTime} - {item.EndTime}");
-                    Console.WriteLine();
+        //    foreach (var item in reservations)
+        //    {
+        //        if (userId == item.customer.Id)
+        //        {
+        //            Console.WriteLine($"Reservation ID: {item.ResrvationId}");
+        //            Console.WriteLine($"Date: {item.Date.ToShortDateString()}");
+        //            Console.WriteLine($"Court: {item.court.CourtId} {item.court.Description} {item.court.Type}");
+        //            Console.WriteLine($"Customer: {item.customer.UserName}");
+        //            Console.WriteLine($"Reserved Time Slots: {item.StartTime} - {item.EndTime}");
+        //            Console.WriteLine();
 
-                    reservationsFound = true;
-                }
-            }
+        //            reservationsFound = true;
+        //        }
+        //    }
 
-            if (!reservationsFound)
-            {
-                Console.WriteLine("No reservations found for the specified user ID.");
-            }
+        //    if (!reservationsFound)
+        //    {
+        //        Console.WriteLine("No reservations found for the specified user ID.");
+        //    }
 
 
-        }
+        //}
 
 
 

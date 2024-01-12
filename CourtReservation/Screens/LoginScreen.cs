@@ -31,7 +31,7 @@ namespace CourtReservation.Screens
                     Customer customerLog = new();
                     Console.Write("Username: ");
                     username = Console.ReadLine();
-                    Console.Write("\nPassword: ");
+                    Console.Write("Password: ");
                     password = Console.ReadLine();
 
                     while (!isLogin)

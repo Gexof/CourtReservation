@@ -67,8 +67,6 @@ namespace CourtReservation.Models
         }
 
 
-
-
         public bool login(string userName, string password)
         {
             List<User> users = LoadUsers();

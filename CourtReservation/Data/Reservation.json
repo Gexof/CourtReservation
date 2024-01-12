@@ -1,147 +1,87 @@
 [
   {
-    "ResrvationId": 1,
-    "Date": "2024-01-07",
+    "ResrvationId": -23851947,
+    "Date": "2020-01-01",
+    "court": {
+      "CourtId": 104,
+      "Description": "11 v 11 football pitch and the  dimensions  is  110 yards (100.6m) x 70 yards (64.0m)",
+      "Type": "Football"
+    },
+    "customer": {
+      "Id": 4,
+      "UserName": "Ali",
+      "Password": "",
+      "UserType": "customer"
+    },
+    "StartTime": "10:00:00",
+    "EndTime": "12:00:00"
+  },
+  {
+    "ResrvationId": -23805704,
+    "Date": "2050-01-01",
+    "court": {
+      "CourtId": 104,
+      "Description": "11 v 11 football pitch and the  dimensions  is  110 yards (100.6m) x 70 yards (64.0m)",
+      "Type": "Football"
+    },
+    "customer": {
+      "Id": 4,
+      "UserName": "Ali",
+      "Password": "",
+      "UserType": "customer"
+    },
+    "StartTime": "10:00:00",
+    "EndTime": "12:00:00"
+  },
+  {
+    "ResrvationId": -23805704,
+    "Date": "2050-01-01",
+    "court": {
+      "CourtId": 104,
+      "Description": "11 v 11 football pitch and the  dimensions  is  110 yards (100.6m) x 70 yards (64.0m)",
+      "Type": "Football"
+    },
+    "customer": {
+      "Id": 4,
+      "UserName": "Adel",
+      "Password": "",
+      "UserType": "customer"
+    },
+    "StartTime": "10:00:00",
+    "EndTime": "12:00:00"
+  },
+  {
+    "ResrvationId": -19986693,
+    "Date": "2050-01-01",
+    "court": {
+      "CourtId": 104,
+      "Description": "11 v 11 football pitch and the  dimensions  is  110 yards (100.6m) x 70 yards (64.0m)",
+      "Type": "Football"
+    },
+    "customer": {
+      "Id": 4,
+      "UserName": "Ali",
+      "Password": "",
+      "UserType": "customer"
+    },
+    "StartTime": "12:00:00",
+    "EndTime": "14:00:00"
+  },
+  {
+    "ResrvationId": -12997905,
+    "Date": "2024-01-25",
     "court": {
       "CourtId": 102,
-      "Description": "fhdjsdjodaovdadanodankskcosda ",
-      "Type": "Football"
-    },
-    "customer": {
-      "Id": 52,
-      "UserName": "Gexof",
-      "Password": null,
-      "UserType": null
-    },
-    "ReservedTimeSlots": [],
-    "StartTime": "10:00:00",
-    "EndTime": "12:00:00"
-  },
-  {
-    "ResrvationId": -192958059,
-    "Date": "2024-01-07",
-    "court": {
-      "CourtId": 5,
-      "Description": "Sdv",
-      "Type": "football"
-    },
-    "customer": {
-      "Id": 3,
-      "UserName": "mohamed",
-      "Password": "",
-      "UserType": "Customer"
-    },
-    "ReservedTimeSlots": [],
-    "StartTime": "16:00:00",
-    "EndTime": "18:00:00"
-  },
-  {
-    "ResrvationId": -192768500,
-    "Date": "2024-01-07",
-    "court": {
-      "CourtId": 5,
-      "Description": "Sdv",
-      "Type": "football"
-    },
-    "customer": {
-      "Id": 3,
-      "UserName": "mohamed",
-      "Password": "",
-      "UserType": "Customer"
-    },
-    "ReservedTimeSlots": [],
-    "StartTime": "16:00:00",
-    "EndTime": "18:00:00"
-  },
-  {
-    "ResrvationId": 50,
-    "Date": "2024-01-07",
-    "court": {
-      "CourtId": 140,
-      "Description": "fhdjsdjodaovdadanodankskcosda ",
-      "Type": "Football"
-    },
-    "customer": {
-      "Id": 52,
-      "UserName": "Gexof",
-      "Password": null,
-      "UserType": null
-    },
-    "ReservedTimeSlots": [],
-    "StartTime": "18:00:00",
-    "EndTime": "22:00:00"
-  },
-  {
-    "ResrvationId": -192722856,
-    "Date": "2024-01-07",
-    "court": {
-      "CourtId": 5,
-      "Description": "Sdv",
-      "Type": "football"
-    },
-    "customer": {
-      "Id": 78,
-      "UserName": "mohamed",
-      "Password": "",
-      "UserType": "Customer"
-    },
-    "ReservedTimeSlots": [],
-    "StartTime": "16:00:00",
-    "EndTime": "18:00:00"
-  },
-  {
-    "ResrvationId": -190793920,
-    "Date": "2024-01-07",
-    "court": {
-      "CourtId": 6,
-      "Description": "Sdv",
-      "Type": "football"
-    },
-    "customer": {
-      "Id": 20,
-      "UserName": "LOLO",
-      "Password": "",
-      "UserType": "Customer"
-    },
-    "ReservedTimeSlots": [],
-    "StartTime": "16:00:00",
-    "EndTime": "18:00:00"
-  },
-  
-  {
-    "ResrvationId": -77628329,
-    "Date": "2024-11-11",
-    "court": {
-      "CourtId": 9,
-      "Description": "3la ra2y el swaisy msh btt7asb keda ya sa7by ",
-      "Type": "Paddel"
-    },
-    "customer": {
-      "Id": 4,
-      "UserName": "Ali",
-      "Password": "",
-      "UserType": "Customer"
-    },
-    "ReservedTimeSlots": [],
-    "StartTime": "18.00:00:00",
-    "EndTime": "20.00:00:00"
-  },
-  {
-    "ResrvationId": -42830533,
-    "Date": "2024-01-06",
-    "court": {
-      "CourtId": 108,
-      "Description": "Test from Gexof",
+      "Description": "5-a-side football pitch that has 40 yards (36.5m) long and 30 yards (27.5m) wide.",
       "Type": "Football"
     },
     "customer": {
       "Id": 4,
       "UserName": "Ali",
       "Password": "",
-      "UserType": "Customer"
+      "UserType": "customer"
     },
-    "ReservedTimeSlots": [],
-    "StartTime": "10:00:00",
-    "EndTime": "12:00:00"
+    "StartTime": "10:30:00",
+    "EndTime": "12:30:00"
   }
 ]

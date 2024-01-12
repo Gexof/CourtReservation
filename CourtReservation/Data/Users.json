@@ -22,5 +22,29 @@
     "UserName": "Ali",
     "Password": "123",
     "UserType": "Customer"
+  },
+  {
+    "Id": 5,
+    "UserName": "Adel",
+    "Password": "123",
+    "UserType": "customer"
+  },
+  {
+    "Id": 6,
+    "UserName": "Omar",
+    "Password": "12345",
+    "UserType": "customer"
+  },
+  {
+    "Id": 7,
+    "UserName": " Kamal",
+    "Password": "12345",
+    "UserType": "admin"
+  },
+  {
+    "Id": 8,
+    "UserName": "LOL",
+    "Password": "12345",
+    "UserType": "admin"
   }
 ]

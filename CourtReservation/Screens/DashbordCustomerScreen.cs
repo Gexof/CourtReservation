@@ -58,16 +58,19 @@ namespace CourtReservation.Screens
             {
                 if(item.customer.UserName== username)
                 {
-                    Console.WriteLine(item.court.CourtId);
-                    Console.WriteLine(item.court.Description);
-                    Console.WriteLine(item.court.Type);
-                    Console.WriteLine(item.StartTime);
-                    Console.WriteLine(item.EndTime);
-                    Console.WriteLine(item.Date);
-
+                    Console.WriteLine($"Reservation ID: {item.ResrvationId}");
+                    Console.WriteLine($"Court: Court ID: {item.court.CourtId}");
+                    Console.WriteLine($"Court Description: {item.court.Description}");
+                    Console.WriteLine($"Court Type: {item.court.Type}");
+                    Console.WriteLine($"Customer: {item.customer.UserName}");
+                    Console.WriteLine($"Date: {item.Date}");
+                    Console.WriteLine($"Reserved Time Slots: {item.StartTime} - {item.EndTime}");
+                    Console.WriteLine("*****************************");
+                    Console.WriteLine();
                 }
             }
         }
+
         static void ReserveFootball(string username)
         {
             Admin admin = new Admin();
@@ -122,13 +125,20 @@ namespace CourtReservation.Screens
             Console.WriteLine("Add End Time");
             TimeSpan EndTime = TimeSpan.Parse(Console.ReadLine());
 
-            Reservation NewRes = new Reservation(court0, customer, startTime, EndTime, date);
-            customer.MakeReservation(NewRes);
+            Reservation r = new();
+            List<Reservation> ReservationsList = r.LoadReservationData();
 
+            r =  ReservationsList.Find(Reservation => Reservation.StartTime == startTime && Reservation.EndTime == EndTime && Reservation.Date == date && Reservation.court.CourtId == id);
+
+            if (r != null)
+            {
+                Console.WriteLine("The Time is not Avalibale");
+            } else
+            {
+                Reservation NewRes = new Reservation(court0, customer, startTime, EndTime, date);
+                customer.MakeReservation(NewRes);
+            }
         }
-
-        
-
 
         static void ReservePaddel(string username)
 
@@ -185,8 +195,22 @@ namespace CourtReservation.Screens
             Console.WriteLine("Add End Time");
             TimeSpan EndTime = TimeSpan.Parse(Console.ReadLine());
 
-            Reservation NewRes = new Reservation(court0,customer, startTime,EndTime,date);
-            customer.MakeReservation(NewRes);
+
+
+            Reservation r = new();
+            List<Reservation> ReservationsList = r.LoadReservationData();
+
+            r = ReservationsList.Find(Reservation => Reservation.StartTime == startTime && Reservation.EndTime == EndTime && Reservation.Date == date && Reservation.court.CourtId == id);
+
+            if (r != null)
+            {
+                Console.WriteLine("The Time is not Avalibale");
+            }
+            else
+            {
+                Reservation NewRes = new Reservation(court0, customer, startTime, EndTime, date);
+                customer.MakeReservation(NewRes);
+            }
         }
 
     }

@@ -37,24 +37,14 @@ namespace CourtReservation.Models
         }
 
 
-        // Add a new court with an integer CourtId
         public void AddCourt(int courtId, string Description, string Type)
         {
-            List<Court> existingCourts = ShowCourt(); // Read existing data
-
-            // Create a new court
+            List<Court> existingCourts = ShowCourt(); 
             Court newCourt = new Court { CourtId = courtId, Description = Description, Type = Type };
-
-            // Add the new court to the existing list
             existingCourts.Add(newCourt);
-
-            // Save the updated list back to the file
             string updatedJson = JsonConvert.SerializeObject(existingCourts, Formatting.Indented);
             File.WriteAllText(CourtPath, updatedJson);
-
             Console.WriteLine($"Added Court ID: {courtId}");
-
-
         }
 
 
