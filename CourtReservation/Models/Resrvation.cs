@@ -10,7 +10,7 @@ namespace CourtReservation.Models
     internal class Reservation 
     {
 
-        private const string ResPath = "C:\\Users\\Mohamed Ashraf\\source\\repos\\CourtReservation\\CourtReservation\\Data\\Reservation.json";
+        private const string ResPath = "C:\\Users\\Administrator\\source\\repos\\CourtReservation\\CourtReservation\\Data\\Reservation.json";
         public int ResrvationId { set; get; }
 
         public DateOnly Date { set; get; }

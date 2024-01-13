@@ -1,81 +1,88 @@
 ﻿using CourtReservation.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CourtReservation.Screens
 {
     internal class LoginScreen
     {
-
-
-        public static void LoginView() {
+        public static void LoginView()
+        {
             Console.Clear();
             Console.WriteLine("=================== Login =================== \n");
             Console.WriteLine("Please Select Account Type:");
             Console.WriteLine("[1] Customer");
             Console.WriteLine("[2] Admin");
+            Console.WriteLine("[0] Back");
 
             User user = new();
 
-            string UserChoice = Console.ReadLine();
+            string UserChoice;
             bool isLogin = false;
             string username;
             string password;
 
-            switch (UserChoice)
+            while (true)
             {
-                case "1":
-                    Customer customerLog = new();
-                    Console.Write("Username: ");
-                    username = Console.ReadLine();
-                    Console.Write("Password: ");
-                    password = Console.ReadLine();
 
-                    while (!isLogin)
-                    {
-                        isLogin = customerLog.login(username, password);
+                isLogin = false;
+                UserChoice = Console.ReadLine();
 
-                        if (!isLogin)
+                switch (UserChoice)
+                {
+                    case "1":
+                        Customer customerLog = new();
+                        Console.Write("Username: ");
+                        username = Console.ReadLine();
+                        Console.Write("Password: ");
+                        password = Console.ReadLine();
+
+                        while (!isLogin)
                         {
-                            Console.Write("Username: ");
-                            username = Console.ReadLine();
-                            Console.Write("\nPassword: ");
-                            password = Console.ReadLine();
+                            isLogin = customerLog.login(username, password);
+
+                            if (!isLogin)
+                            {
+                                Console.Write("Username: ");
+                                username = Console.ReadLine();
+                                Console.Write("\nPassword: ");
+                                password = Console.ReadLine();
+                            }
                         }
-                    }
+                        Console.Clear();
+                        DashbordCustomerScreen.DashbordCustomerView(username);
+                        break;
 
-                    DashbordCustomerScreen.DashbordCustomerView(username);
-                    break;
+                    case "2":
+                        Admin admin = new();
+                        Console.Write("Username: ");
+                        username = Console.ReadLine();
+                        Console.Write("\nPassword: ");
+                        password = Console.ReadLine();
 
-                case "2":
-                    Admin admin = new();
-                    Console.Write("Username: ");
-                    username = Console.ReadLine();
-                    Console.Write("\nPassword: ");
-                    password = Console.ReadLine();
-
-                    while (!isLogin)
-                    {
-                        isLogin = admin.login(username, password);
-
-                        if (!isLogin)
+                        while (!isLogin)
                         {
-                            Console.Write("Username: ");
-                            username = Console.ReadLine();
-                            Console.Write("\nPassword: ");
-                            password = Console.ReadLine();
-                        }
-                    }
+                            isLogin = admin.login(username, password);
 
-                    DashbordAdminScreen.DashbordAdminView();
-                    break;
-                default:
-                    Console.WriteLine("Wrong Option");
-                    break;
-            };
+                            if (!isLogin)
+                            {
+                                Console.Write("Username: ");
+                                username = Console.ReadLine();
+                                Console.Write("\nPassword: ");
+                                password = Console.ReadLine();
+                            }
+                        }
+                        Console.Clear();
+                        DashbordAdminScreen.DashbordAdminView();
+                        break;
+
+                    case "0":
+                        return; // Exit the method
+
+                    default:
+                        Console.WriteLine("Wrong Option");
+                        break;
+                }
+            }
         }
     }
 }

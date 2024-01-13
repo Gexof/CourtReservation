@@ -9,7 +9,7 @@ namespace CourtReservation.Models
     {
 
  
-        string Resname = "C:\\Users\\Mohamed Ashraf\\Source\\Repos\\CourtReservation\\CourtReservation\\Data\\Reservation.json";
+        string Resname = "C:\\Users\\Administrator\\source\\repos\\CourtReservation\\CourtReservation\\Data\\Reservation.json";
 
         public Customer()
         {
