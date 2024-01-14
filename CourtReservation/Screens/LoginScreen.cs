@@ -21,10 +21,8 @@ namespace CourtReservation.Screens
             string username;
             string password;
 
-            while (true)
+            while (!isLogin)
             {
-
-                isLogin = false;
                 UserChoice = Console.ReadLine();
 
                 switch (UserChoice)
@@ -76,13 +74,14 @@ namespace CourtReservation.Screens
                         break;
 
                     case "0":
-                        return; // Exit the method
+                        return;
 
                     default:
                         Console.WriteLine("Wrong Option");
                         break;
                 }
             }
+
         }
     }
 }

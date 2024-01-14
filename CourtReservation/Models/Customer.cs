@@ -9,7 +9,7 @@ namespace CourtReservation.Models
     {
 
  
-        string Resname = "C:\\Users\\Administrator\\source\\repos\\CourtReservation\\CourtReservation\\Data\\Reservation.json";
+        string Resname = "C:\\Users\\Mohamed Ashraf\\source\\repos\\CourtReservation\\CourtReservation\\Data\\Reservation.json";
 
         public Customer()
         {
@@ -55,41 +55,6 @@ namespace CourtReservation.Models
 
             return uniqueId;
         }
-
-        // View reservations
-        //public void ViewReservations()
-        //{
-        //    Reservation reservation = new Reservation();
-        //    int userId = 5; 
-
-        //    List<Reservation> reservations = reservation.LoadReservationData();
-
-        //    bool reservationsFound = false;
-
-        //    foreach (var item in reservations)
-        //    {
-        //        if (userId == item.customer.Id)
-        //        {
-        //            Console.WriteLine($"Reservation ID: {item.ResrvationId}");
-        //            Console.WriteLine($"Date: {item.Date.ToShortDateString()}");
-        //            Console.WriteLine($"Court: {item.court.CourtId} {item.court.Description} {item.court.Type}");
-        //            Console.WriteLine($"Customer: {item.customer.UserName}");
-        //            Console.WriteLine($"Reserved Time Slots: {item.StartTime} - {item.EndTime}");
-        //            Console.WriteLine();
-
-        //            reservationsFound = true;
-        //        }
-        //    }
-
-        //    if (!reservationsFound)
-        //    {
-        //        Console.WriteLine("No reservations found for the specified user ID.");
-        //    }
-
-
-        //}
-
-
 
     }
 }

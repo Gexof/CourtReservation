@@ -11,7 +11,7 @@ namespace CourtReservation.Models
     internal class User 
     {
 
-        private const string FileName = "C:\\Users\\Administrator\\source\\repos\\CourtReservation\\CourtReservation\\Data\\Users.json";
+        private const string FileName = "C:\\Users\\Mohamed Ashraf\\source\\repos\\CourtReservation\\CourtReservation\\Data\\Users.json";
 
        
         public int Id { get; set; }
@@ -59,11 +59,11 @@ namespace CourtReservation.Models
 
         public void RegisterUser(int id,string username, string password, string type)
         {
-            List<User> users = LoadUsers(); // Loading The List of users from Json File
+            List<User> users = LoadUsers(); 
             User newuser = new(id,username, password, type);
-            users.Add(newuser); // Add New user To the users List That Retrieved from Json file
-            string updateJson = JsonConvert.SerializeObject(users, Formatting.Indented); // Convert From List To Json Format
-            File.WriteAllText(FileName, updateJson); // Write All Text Files to Json File 
+            users.Add(newuser); 
+            string updateJson = JsonConvert.SerializeObject(users, Formatting.Indented); 
+            File.WriteAllText(FileName, updateJson); 
         }
 
 

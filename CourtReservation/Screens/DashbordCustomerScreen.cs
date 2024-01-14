@@ -221,7 +221,6 @@ namespace CourtReservation.Screens
             {
                 Reservation NewRes = new Reservation(court0, customer, startTime, EndTime, date);
                 customer.MakeReservation(NewRes);
-                Console.WriteLine("Reservation successful!");
                 Console.WriteLine("Reservation successful! Press Enter To Contunie ....");
                 Console.ReadKey();
                 Console.Clear();
